@@ -1,0 +1,44 @@
+<h2>Modificar Perfil</h2>
+<!-- <%= resource_name.to_s.humanize %></h2>  -->
+
+<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name,
+                label: 'Nombre',
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "nombre" }%>
+    <%= f.input :email, required: true, autofocus: true %>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+    <%= f.input :password,
+                hint: "dejar en blanco si no cambia su contraseña",
+                label: 'Contraseña',
+                required: false,
+                input_html: { autocomplete: "Nueva Contraseña" } %>
+    <%= f.input :password_confirmation,
+                required: false,
+                label: 'Confirmar Contraseña',
+                input_html: { autocomplete: "Nueva Contraseña" } %>
+    <%= f.input :current_password,
+                hint: "se requiere confirmar la contraseña para realizar los cambios",
+                label: 'Contraseña Actual',
+                required: true,
+                input_html: { autocomplete: "contraseña actual" } %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Actualiuzar" %>
+  </div>
+<% end %>
+
+<h3>Cancelar cuenta</h3>
+
+ <p><%= link_to "Cancelar cuenta", registration_path(resource_name), data: { confirm: "¿Confirma Cancelar Cuenta?" }, method: :delete %></p>
+
+<%= link_to "Regresar", :back %>

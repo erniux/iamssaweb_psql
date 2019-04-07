@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id_solicitud: MyString
+  piso: false
+  altura_piso: 1.5
+  codigo_evaluacion: MyString
+  diametro: MyString
+  no_uniones: 1
+  cve_cedula: MyString
+
+two:
+  id_solicitud: MyString
+  piso: false
+  altura_piso: 1.5
+  codigo_evaluacion: MyString
+  diametro: MyString
+  no_uniones: 1
+  cve_cedula: MyString

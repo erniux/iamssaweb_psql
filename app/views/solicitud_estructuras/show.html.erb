@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id solicitud:</strong>
+  <%= @solicitud_estructura.id_solicitud %>
+</p>
+
+<p>
+  <strong>Estructura:</strong>
+  <%= @solicitud_estructura.estructura %>
+</p>
+
+<p>
+  <strong>Columna pr:</strong>
+  <%= @solicitud_estructura.columna_pr %>
+</p>
+
+<p>
+  <strong>Columna hss o cajon:</strong>
+  <%= @solicitud_estructura.columna_hss_o_cajon %>
+</p>
+
+<p>
+  <strong>Columna ptr o monten:</strong>
+  <%= @solicitud_estructura.columna_ptr_o_monten %>
+</p>
+
+<p>
+  <strong>Trabes pr:</strong>
+  <%= @solicitud_estructura.trabes_pr %>
+</p>
+
+<p>
+  <strong>Trabes ps:</strong>
+  <%= @solicitud_estructura.trabes_ps %>
+</p>
+
+<p>
+  <strong>Trabes angulo con ptr:</strong>
+  <%= @solicitud_estructura.trabes_angulo_con_ptr %>
+</p>
+
+<p>
+  <strong>Angulo con angulo:</strong>
+  <%= @solicitud_estructura.angulo_con_angulo %>
+</p>
+
+<p>
+  <strong>Ptr con ptr:</strong>
+  <%= @solicitud_estructura.ptr_con_ptr %>
+</p>
+
+<p>
+  <strong>Union filete:</strong>
+  <%= @solicitud_estructura.union_filete %>
+</p>
+
+<p>
+  <strong>Union a tope:</strong>
+  <%= @solicitud_estructura.union_a_tope %>
+</p>
+
+<p>
+  <strong>Espesor columna:</strong>
+  <%= @solicitud_estructura.espesor_columna %>
+</p>
+
+<p>
+  <strong>Espesor trabe:</strong>
+  <%= @solicitud_estructura.espesor_trabe %>
+</p>
+
+<p>
+  <strong>Tiempo fabricacion montaje:</strong>
+  <%= @solicitud_estructura.tiempo_fabricacion_montaje %>
+</p>
+
+<p>
+  <strong>Toneladas:</strong>
+  <%= @solicitud_estructura.toneladas %>
+</p>
+
+<%= link_to 'Edit', edit_solicitud_estructura_path(@solicitud_estructura) %> |
+<%= link_to 'Back', solicitud_estructuras_path %>

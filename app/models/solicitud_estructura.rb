@@ -1,0 +1,2 @@
+class SolicitudEstructura < ApplicationRecord
+end

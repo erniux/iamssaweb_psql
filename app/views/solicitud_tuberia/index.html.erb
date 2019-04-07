@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solicitud Tuberia</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id solicitud</th>
+      <th>Piso</th>
+      <th>Altura piso</th>
+      <th>Codigo evaluacion</th>
+      <th>Diametro</th>
+      <th>No uniones</th>
+      <th>Cve cedula</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitud_tuberia.each do |solicitud_tuberium| %>
+      <tr>
+        <td><%= solicitud_tuberium.id_solicitud %></td>
+        <td><%= solicitud_tuberium.piso %></td>
+        <td><%= solicitud_tuberium.altura_piso %></td>
+        <td><%= solicitud_tuberium.codigo_evaluacion %></td>
+        <td><%= solicitud_tuberium.diametro %></td>
+        <td><%= solicitud_tuberium.no_uniones %></td>
+        <td><%= solicitud_tuberium.cve_cedula %></td>
+        <td><%= link_to 'Show', solicitud_tuberium %></td>
+        <td><%= link_to 'Edit', edit_solicitud_tuberium_path(solicitud_tuberium) %></td>
+        <td><%= link_to 'Destroy', solicitud_tuberium, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitud Tuberium', new_solicitud_tuberium_path %>

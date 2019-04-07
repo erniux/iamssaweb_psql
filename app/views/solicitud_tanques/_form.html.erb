@@ -1,0 +1,21 @@
+<%= simple_form_for(@solicitud_tanque) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :id_solicitud %>
+    <%= f.input :tanque %>
+    <%= f.input :recipiente_a_presion %>
+    <%= f.input :espesor_cuerpo %>
+    <%= f.input :espesor_tapa %>
+    <%= f.input :espesor_diametro %>
+    <%= f.input :espesor_capacidad %>
+    <%= f.input :espesor_longitud_altura %>
+    <%= f.input :no_sold_circunferencia %>
+    <%= f.input :no_sold_longitud %>
+    <%= f.input :codigo_evaluacion %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

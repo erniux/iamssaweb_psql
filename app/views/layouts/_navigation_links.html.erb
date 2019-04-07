@@ -1,0 +1,16 @@
+<ul class="nav navbar-nav">
+<%= link_to ' Calendario', visitors_path, class: 'navbar-brand glyphicon glyphicon-calendar' if logged_in?(:site_admin, :user) %>
+<%= link_to ' Solicitudes', root_path, class: 'navbar-brand glyphicon glyphicon-file' if logged_in?(:site_admin, :user) %>
+<%= link_to ' Cotizaciones', root_path, class: 'navbar-brand glyphicon glyphicon-tasks ' if logged_in?(:site_admin, :user) %>
+<%= link_to ' Reportes', root_path, class: 'navbar-brand glyphicon glyphicon-list-alt' if logged_in?(:site_admin, :user) %>
+<%= link_to ' Catálogos', catalogos_path, class: 'navbar-brand glyphicon glyphicon-cog' if logged_in?(:site_admin, :user) %>
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<% if current_user %>
+   <%= link_to ' Perfil', edit_user_registration_path, class: 'navbar-brand glyphicon glyphicon-pencil' %>
+   <%= link_to ' Salir', destroy_user_session_path, method: :delete, class: 'navbar-brand glyphicon glyphicon-log-out' %>
+<% else %>
+   <%= link_to ' Ingresar', new_user_session_path, class: 'glyphicon glyphicon-log-in navbar-brand' %>
+   <%= link_to ' Registro', new_user_registration_path, class: 'navbar-brand glyphicon glyphicon-pencil' %>
+<% end %>
+</ul>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solicitud Servicios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id servicio</th>
+      <th>Id solicitud</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitud_servicios.each do |solicitud_servicio| %>
+      <tr>
+        <td><%= solicitud_servicio.id_servicio %></td>
+        <td><%= solicitud_servicio.id_solicitud %></td>
+        <td><%= link_to 'Show', solicitud_servicio %></td>
+        <td><%= link_to 'Edit', edit_solicitud_servicio_path(solicitud_servicio) %></td>
+        <td><%= link_to 'Destroy', solicitud_servicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitud Servicio', new_solicitud_servicio_path %>

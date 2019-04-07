@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solicitud Estructuras</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id solicitud</th>
+      <th>Estructura</th>
+      <th>Columna pr</th>
+      <th>Columna hss o cajon</th>
+      <th>Columna ptr o monten</th>
+      <th>Trabes pr</th>
+      <th>Trabes ps</th>
+      <th>Trabes angulo con ptr</th>
+      <th>Angulo con angulo</th>
+      <th>Ptr con ptr</th>
+      <th>Union filete</th>
+      <th>Union a tope</th>
+      <th>Espesor columna</th>
+      <th>Espesor trabe</th>
+      <th>Tiempo fabricacion montaje</th>
+      <th>Toneladas</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitud_estructuras.each do |solicitud_estructura| %>
+      <tr>
+        <td><%= solicitud_estructura.id_solicitud %></td>
+        <td><%= solicitud_estructura.estructura %></td>
+        <td><%= solicitud_estructura.columna_pr %></td>
+        <td><%= solicitud_estructura.columna_hss_o_cajon %></td>
+        <td><%= solicitud_estructura.columna_ptr_o_monten %></td>
+        <td><%= solicitud_estructura.trabes_pr %></td>
+        <td><%= solicitud_estructura.trabes_ps %></td>
+        <td><%= solicitud_estructura.trabes_angulo_con_ptr %></td>
+        <td><%= solicitud_estructura.angulo_con_angulo %></td>
+        <td><%= solicitud_estructura.ptr_con_ptr %></td>
+        <td><%= solicitud_estructura.union_filete %></td>
+        <td><%= solicitud_estructura.union_a_tope %></td>
+        <td><%= solicitud_estructura.espesor_columna %></td>
+        <td><%= solicitud_estructura.espesor_trabe %></td>
+        <td><%= solicitud_estructura.tiempo_fabricacion_montaje %></td>
+        <td><%= solicitud_estructura.toneladas %></td>
+        <td><%= link_to 'Show', solicitud_estructura %></td>
+        <td><%= link_to 'Edit', edit_solicitud_estructura_path(solicitud_estructura) %></td>
+        <td><%= link_to 'Destroy', solicitud_estructura, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitud Estructura', new_solicitud_estructura_path %>

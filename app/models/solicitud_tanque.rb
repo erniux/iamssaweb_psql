@@ -1,0 +1,2 @@
+class SolicitudTanque < ApplicationRecord
+end

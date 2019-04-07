@@ -1,0 +1,26 @@
+<%= simple_form_for(@solicitud_estructura) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :id_solicitud %>
+    <%= f.input :estructura %>
+    <%= f.input :columna_pr %>
+    <%= f.input :columna_hss_o_cajon %>
+    <%= f.input :columna_ptr_o_monten %>
+    <%= f.input :trabes_pr %>
+    <%= f.input :trabes_ps %>
+    <%= f.input :trabes_angulo_con_ptr %>
+    <%= f.input :angulo_con_angulo %>
+    <%= f.input :ptr_con_ptr %>
+    <%= f.input :union_filete %>
+    <%= f.input :union_a_tope %>
+    <%= f.input :espesor_columna %>
+    <%= f.input :espesor_trabe %>
+    <%= f.input :tiempo_fabricacion_montaje %>
+    <%= f.input :toneladas %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

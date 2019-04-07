@@ -1,0 +1,39 @@
+<%= simple_form_for(@cliente) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre_fiscal %>
+    <%= f.input :nombre_comercial %>
+    <%= f.input :string %>
+    <%= f.input :rfc %>
+    <%= f.input :calle_numero %>
+    <%= f.input :colonia %>
+    <%= f.input :poblacion %>
+    <%= f.input :estado %>
+    <%= f.input :codigo_postal %>
+    <%= f.input :telefono_oficina %>
+    <%= f.input :telefono_celular %>
+    <%= f.input :telefono_directo %>
+    <%= f.input :correo %>
+    <%= f.input :medio_contacto %>
+    <%= f.input :precio %>
+    <%= f.input :presupuesto %>
+    <%= f.input :credito %>
+    <%= f.input :revision_lunes %>
+    <%= f.input :revision_martes %>
+    <%= f.input :revision_miercoles %>
+    <%= f.input :revision_jueves %>
+    <%= f.input :revision_viernes %>
+    <%= f.input :revision_sabado %>
+    <%= f.input :cobro_lunes %>
+    <%= f.input :cobro_martes %>
+    <%= f.input :cobro_miercoles %>
+    <%= f.input :cobro_jueves %>
+    <%= f.input :cobro_viernes %>
+    <%= f.input :cobro_sabado %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

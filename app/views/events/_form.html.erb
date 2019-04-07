@@ -1,0 +1,47 @@
+<%= simple_form_for @event, remote: true do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title, label: 'Título del Evento' %>
+    <%= f.input :date_range, input_html: { class: "form-control input-sm date-range-picker" }, label: 'Fechas' %>
+    <%= f.input_field :start, as: :hidden, value: Date.today, class: 'form-control input-sm start_hidden' %>
+    <%= f.input_field :end, as: :hidden, value: Date.today, class: 'form-control input-sm end_hidden' %>
+    <%= f.input :color, as: :select, collection: [['Negro','black'], ['Verde','green'], ['Rojo','red'],
+                                                  ['Azul','blue'], ['Naranja','orange'], ['Morado','purple'],
+                                                  ['Cafe','brown']] %>
+    <%= f.input :cancelada, label: 'Cancelada' %>
+    <%= f.input :Cancelacion, label: 'Fecha de Cancelación' %>
+    <%= f.input :IdEntidad, label: 'Entidad' %>
+    <%= f.input :NoCotizacion, label: 'Num. Cotización' %>
+    <%= f.input :FechaSalida, input_html:{ class: "form-control input-sm date-range-picker" }, label: 'Fecha Salida' %>
+    <%= f.input :FechaRegreso, input_html:{ class: "form-control input-sm date-range-picker" }, label: 'Fecha Regreso' %>
+    <%= f.input :IdPersonalAutoriza, label: 'Personal que Autoriza' %>
+    <%= f.input :Ubicacion, label: 'Ubicación' %>
+    <%= f.input :EntregarResultados, label: 'Entrega de Resultados' %>
+    <%= f.input :IdContactoSolicita, label: 'Contacto Solicitante' %>
+    <%= f.input :IdContactoAtiende, label: 'Contacto Atendente' %>
+    <%= f.input :SegLentes, label: '¿Lentes?' %>
+    <%= f.input :SegCasco, label: '¿Casco?' %>
+    <%= f.input :SegZapatos, label: '¿Zapatos?' %>
+    <%= f.input :SegArnes, label: '¿Arnes?' %>
+    <%= f.input :SegTaponesAuditivos, label:'¿Tapones Auditivos?' %>
+    <%= f.input :SegIMSS, label: '¿IMSS?' %>
+    <%= f.input :Obra, label: 'Obra' %>
+    <%= f.input :IdEntidadDpto, label: 'Departamento' %>
+    <%= f.input :IdCiudad, label: 'Ciudad' %>
+    <%= f.input :Unidad, label: 'Unidad' %>
+    <%= f.input :NoOTOrigen, label: 'OT Origen' %>
+    <%= f.input :IdObra, label: 'Obra' %>
+    <%= f.input :EntregarBorrador, label: 'Borrador' %>
+    <%= f.input :EntregarPeliculas, label: 'Películas' %>
+
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Guardar Cambios', class: 'btn btn-secondary' %>
+    <%= link_to 'Eliminar',
+                event,
+                method: :delete,
+                class: 'btn btn-danger',
+                data: { confirm: '¿Confirma la acción?' },
+                remote: true unless @event.new_record? %>
+  </div>
+<% end %>

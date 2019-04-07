@@ -1,0 +1,2 @@
+class SolicitudServicio < ApplicationRecord
+end

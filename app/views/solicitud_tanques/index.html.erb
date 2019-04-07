@@ -1,0 +1,47 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Solicitud Tanques</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id solicitud</th>
+      <th>Tanque</th>
+      <th>Recipiente a presion</th>
+      <th>Espesor cuerpo</th>
+      <th>Espesor tapa</th>
+      <th>Espesor diametro</th>
+      <th>Espesor capacidad</th>
+      <th>Espesor longitud altura</th>
+      <th>No sold circunferencia</th>
+      <th>No sold longitud</th>
+      <th>Codigo evaluacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @solicitud_tanques.each do |solicitud_tanque| %>
+      <tr>
+        <td><%= solicitud_tanque.id_solicitud %></td>
+        <td><%= solicitud_tanque.tanque %></td>
+        <td><%= solicitud_tanque.recipiente_a_presion %></td>
+        <td><%= solicitud_tanque.espesor_cuerpo %></td>
+        <td><%= solicitud_tanque.espesor_tapa %></td>
+        <td><%= solicitud_tanque.espesor_diametro %></td>
+        <td><%= solicitud_tanque.espesor_capacidad %></td>
+        <td><%= solicitud_tanque.espesor_longitud_altura %></td>
+        <td><%= solicitud_tanque.no_sold_circunferencia %></td>
+        <td><%= solicitud_tanque.no_sold_longitud %></td>
+        <td><%= solicitud_tanque.codigo_evaluacion %></td>
+        <td><%= link_to 'Show', solicitud_tanque %></td>
+        <td><%= link_to 'Edit', edit_solicitud_tanque_path(solicitud_tanque) %></td>
+        <td><%= link_to 'Destroy', solicitud_tanque, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Solicitud Tanque', new_solicitud_tanque_path %>

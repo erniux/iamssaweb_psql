@@ -1,0 +1,2 @@
+json.extract! solicitud_estructura, :id, :id_solicitud, :estructura, :columna_pr, :columna_hss_o_cajon, :columna_ptr_o_monten, :trabes_pr, :trabes_ps, :trabes_angulo_con_ptr, :angulo_con_angulo, :ptr_con_ptr, :union_filete, :union_a_tope, :espesor_columna, :espesor_trabe, :tiempo_fabricacion_montaje, :toneladas, :created_at, :updated_at
+json.url solicitud_estructura_url(solicitud_estructura, format: :json)

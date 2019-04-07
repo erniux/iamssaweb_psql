@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id solicitud:</strong>
+  <%= @solicitud_tuberium.id_solicitud %>
+</p>
+
+<p>
+  <strong>Piso:</strong>
+  <%= @solicitud_tuberium.piso %>
+</p>
+
+<p>
+  <strong>Altura piso:</strong>
+  <%= @solicitud_tuberium.altura_piso %>
+</p>
+
+<p>
+  <strong>Codigo evaluacion:</strong>
+  <%= @solicitud_tuberium.codigo_evaluacion %>
+</p>
+
+<p>
+  <strong>Diametro:</strong>
+  <%= @solicitud_tuberium.diametro %>
+</p>
+
+<p>
+  <strong>No uniones:</strong>
+  <%= @solicitud_tuberium.no_uniones %>
+</p>
+
+<p>
+  <strong>Cve cedula:</strong>
+  <%= @solicitud_tuberium.cve_cedula %>
+</p>
+
+<%= link_to 'Edit', edit_solicitud_tuberium_path(@solicitud_tuberium) %> |
+<%= link_to 'Back', solicitud_tuberia_path %>

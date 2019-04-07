@@ -1,0 +1,63 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_fiscal: MyString
+  nombre_comercial: MyString
+  string: MyString
+  rfc: MyString
+  calle_numero: MyString
+  colonia: MyString
+  poblacion: MyString
+  estado: MyString
+  codigo_postal: MyString
+  telefono_oficina: MyString
+  telefono_celular: MyString
+  telefono_directo: MyString
+  correo: MyString
+  medio_contacto: MyString
+  precio: MyString
+  presupuesto: 1.5
+  credito: 1.5
+  revision_lunes: false
+  revision_martes: false
+  revision_miercoles: false
+  revision_jueves: false
+  revision_viernes: false
+  revision_sabado: false
+  cobro_lunes: false
+  cobro_martes: false
+  cobro_miercoles: false
+  cobro_jueves: false
+  cobro_viernes: false
+  cobro_sabado: false
+
+two:
+  nombre_fiscal: MyString
+  nombre_comercial: MyString
+  string: MyString
+  rfc: MyString
+  calle_numero: MyString
+  colonia: MyString
+  poblacion: MyString
+  estado: MyString
+  codigo_postal: MyString
+  telefono_oficina: MyString
+  telefono_celular: MyString
+  telefono_directo: MyString
+  correo: MyString
+  medio_contacto: MyString
+  precio: MyString
+  presupuesto: 1.5
+  credito: 1.5
+  revision_lunes: false
+  revision_martes: false
+  revision_miercoles: false
+  revision_jueves: false
+  revision_viernes: false
+  revision_sabado: false
+  cobro_lunes: false
+  cobro_martes: false
+  cobro_miercoles: false
+  cobro_jueves: false
+  cobro_viernes: false
+  cobro_sabado: false

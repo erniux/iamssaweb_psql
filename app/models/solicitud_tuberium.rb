@@ -1,0 +1,2 @@
+class SolicitudTuberium < ApplicationRecord
+end
