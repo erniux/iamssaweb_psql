@@ -1,6 +1,6 @@
 class SolicitudTanquesController < ApplicationController
   before_action :set_solicitud_tanque, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  access user: :all, site_admin: :all
 
   # GET /solicitud_tanques
   def index

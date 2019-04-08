@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_servicio: MyString
-  id_solicitud: MyString
+  references: 
 
 two:
-  id_servicio: MyString
-  id_solicitud: MyString
+  references: 

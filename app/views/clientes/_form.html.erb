@@ -4,7 +4,6 @@
   <div class="form-inputs">
     <%= f.input :nombre_fiscal %>
     <%= f.input :nombre_comercial %>
-    <%= f.input :string %>
     <%= f.input :rfc %>
     <%= f.input :calle_numero %>
     <%= f.input :colonia %>
@@ -13,7 +12,7 @@
     <%= f.input :codigo_postal %>
     <%= f.input :telefono_oficina %>
     <%= f.input :telefono_celular %>
-    <%= f.input :telefono_directo %>
+    <%= f.input :telefono_directro %>
     <%= f.input :correo %>
     <%= f.input :medio_contacto %>
     <%= f.input :precio %>
@@ -33,7 +32,25 @@
     <%= f.input :cobro_sabado %>
   </div>
 
+  <div>
+    <%= f.simple_fields_for :cliente_contactos do |c| %>
+       <%= c.input :nombre %>
+       <%= c.input :appaterno %>
+       <%= c.input :apmaterno %>
+       <%= c.input :telefono_directo %>
+       <%= c.input :correo %>
+       <%= c.input :puesto %>
+       <%= c.input :departamento %>
+    <% end %>
+
+    
+    <%= link_to 'Add Another Asset', '', :class => 'duplicate_nested_form' %>
+
+  </div>
+
+
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+

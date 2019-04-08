@@ -1,6 +1,6 @@
 class SolicitudTuberiaController < ApplicationController
   before_action :set_solicitud_tuberium, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  access user: :all, site_admin: :all
 
   # GET /solicitud_tuberia
   def index

@@ -1,26 +1,22 @@
 class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  access user: :all, site_admin: :all
 
-  # GET /clientes
   def index
     @clientes = Cliente.all
   end
 
-  # GET /clientes/1
   def show
   end
 
-  # GET /clientes/new
   def new
     @cliente = Cliente.new
+    @cliente.cliente_contactos.build
   end
 
-  # GET /clientes/1/edit
   def edit
   end
 
-  # POST /clientes
   def create
     @cliente = Cliente.new(cliente_params)
 
@@ -31,7 +27,6 @@ class ClientesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /clientes/1
   def update
     if @cliente.update(cliente_params)
       redirect_to @cliente, notice: 'Cliente was successfully updated.'
@@ -40,20 +35,23 @@ class ClientesController < ApplicationController
     end
   end
 
-  # DELETE /clientes/1
   def destroy
     @cliente.destroy
     redirect_to clientes_url, notice: 'Cliente was successfully destroyed.'
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_cliente
       @cliente = Cliente.find(params[:id])
+      @cliente.cliente_contactos.build
     end
 
-    # Only allow a trusted parameter "white list" through.
     def cliente_params
-      params.require(:cliente).permit(:nombre_fiscal, :nombre_comercial, :string, :rfc, :calle_numero, :colonia, :poblacion, :estado, :codigo_postal, :telefono_oficina, :telefono_celular, :telefono_directo, :correo, :medio_contacto, :precio, :presupuesto, :credito, :revision_lunes, :revision_martes, :revision_miercoles, :revision_jueves, :revision_viernes, :revision_sabado, :cobro_lunes, :cobro_martes, :cobro_miercoles, :cobro_jueves, :cobro_viernes, :cobro_sabado)
+      params.require(:cliente).permit(:nombre_fiscal, :nombre_comercial, :string, :rfc, 
+        :calle_numero, :colonia, :poblacion, :estado, :codigo_postal, :telefono_oficina, 
+        :telefono_celular, :telefono_directo, :correo, :medio_contacto, :precio, :presupuesto, 
+        :credito, :revision_lunes, :revision_martes, :revision_miercoles, :revision_jueves, 
+        :revision_viernes, :revision_sabado, :cobro_lunes, :cobro_martes, :cobro_miercoles, 
+        :cobro_jueves, :cobro_viernes, :cobro_sabado)
     end
 end

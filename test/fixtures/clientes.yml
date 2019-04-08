@@ -3,21 +3,20 @@
 one:
   nombre_fiscal: MyString
   nombre_comercial: MyString
-  string: MyString
   rfc: MyString
   calle_numero: MyString
   colonia: MyString
   poblacion: MyString
   estado: MyString
-  codigo_postal: MyString
+  codigo_postal: 1
   telefono_oficina: MyString
   telefono_celular: MyString
-  telefono_directo: MyString
+  telefono_directro: MyString
   correo: MyString
   medio_contacto: MyString
-  precio: MyString
-  presupuesto: 1.5
-  credito: 1.5
+  precio: 
+  presupuesto: 
+  credito: 
   revision_lunes: false
   revision_martes: false
   revision_miercoles: false
@@ -34,21 +33,20 @@ one:
 two:
   nombre_fiscal: MyString
   nombre_comercial: MyString
-  string: MyString
   rfc: MyString
   calle_numero: MyString
   colonia: MyString
   poblacion: MyString
   estado: MyString
-  codigo_postal: MyString
+  codigo_postal: 1
   telefono_oficina: MyString
   telefono_celular: MyString
-  telefono_directo: MyString
+  telefono_directro: MyString
   correo: MyString
   medio_contacto: MyString
-  precio: MyString
-  presupuesto: 1.5
-  credito: 1.5
+  precio: 
+  presupuesto: 
+  credito: 
   revision_lunes: false
   revision_martes: false
   revision_miercoles: false

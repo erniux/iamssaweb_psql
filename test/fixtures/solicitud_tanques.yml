@@ -1,27 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_solicitud: 1
-  tanque: false
-  recipiente_a_presion: false
-  espesor_cuerpo: 1.5
-  espesor_tapa: 1.5
-  espesor_diametro: 1.5
-  espesor_capacidad: 1.5
-  espesor_longitud_altura: 1.5
-  no_sold_circunferencia: 1.5
-  no_sold_longitud: 1.5
-  codigo_evaluacion: MyString
+  references: 
 
 two:
-  id_solicitud: 1
-  tanque: false
-  recipiente_a_presion: false
-  espesor_cuerpo: 1.5
-  espesor_tapa: 1.5
-  espesor_diametro: 1.5
-  espesor_capacidad: 1.5
-  espesor_longitud_altura: 1.5
-  no_sold_circunferencia: 1.5
-  no_sold_longitud: 1.5
-  codigo_evaluacion: MyString
+  references: 

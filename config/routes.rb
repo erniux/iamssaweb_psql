@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :solicituds
+  resources :cliente_contactos
   resources :solicitud_estructuras
   resources :solicitud_tanques
   resources :solicitud_tuberia

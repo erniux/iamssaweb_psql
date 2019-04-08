@@ -1,6 +1,6 @@
 class SolicitudServiciosController < ApplicationController
   before_action :set_solicitud_servicio, only: [:show, :edit, :update, :destroy]
-  access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
+  access user: :all, site_admin: :all
 
   # GET /solicitud_servicios
   def index
@@ -54,6 +54,11 @@ class SolicitudServiciosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def solicitud_servicio_params
-      params.require(:solicitud_servicio).permit(:id_servicio, :id_solicitud)
+      params.require(:solicitud_servicio).permit(:id_servicio, :id_solicitud, :servicio, :columna_pr, 
+                                                 :torque, :vacio, :iris, :prueba_doblez, :prueba_pintura, 
+                                                 :doblez, :radiografia, :inspeccion_visual, 
+                                                 :ultrasonido, :liquido_penetrante, :part_magneticas, 
+                                                 :supervicion, :calif_soldador, :calif_procedimiento, 
+                                                 :elab_procedimiento, :emision_procedimiento)
     end
 end

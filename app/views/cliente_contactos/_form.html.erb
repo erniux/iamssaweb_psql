@@ -1,0 +1,27 @@
+<%= simple_form_for(@cliente_contacto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :appaterno %>
+    <%= f.input :apmaterno %>
+    <%= f.input :telefono_directo %>
+    <%= f.input :correo %>
+    <%= f.input :puesto %>
+    <%= f.input :departamento %>
+    <%= f.association :cliente %>
+  </div>
+
+  <div>
+    <% f.simple_fields_for :cliente_contactos |c| %>
+    .duplicatable_nested_form
+     <%= c.association :cliente %>
+     <%=  c.input :amount, :input_html => { min: 0 } %>
+
+
+    <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

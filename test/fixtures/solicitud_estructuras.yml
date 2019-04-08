@@ -1,37 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  id_solicitud: 1
-  estructura: false
-  columna_pr: false
-  columna_hss_o_cajon: false
-  columna_ptr_o_monten: false
-  trabes_pr: false
-  trabes_ps: false
-  trabes_angulo_con_ptr: false
-  angulo_con_angulo: false
-  ptr_con_ptr: false
-  union_filete: false
-  union_a_tope: false
-  espesor_columna: 1.5
-  espesor_trabe: 1.5
-  tiempo_fabricacion_montaje: 1.5
-  toneladas: 1.5
+  references: 
 
 two:
-  id_solicitud: 1
-  estructura: false
-  columna_pr: false
-  columna_hss_o_cajon: false
-  columna_ptr_o_monten: false
-  trabes_pr: false
-  trabes_ps: false
-  trabes_angulo_con_ptr: false
-  angulo_con_angulo: false
-  ptr_con_ptr: false
-  union_filete: false
-  union_a_tope: false
-  espesor_columna: 1.5
-  espesor_trabe: 1.5
-  tiempo_fabricacion_montaje: 1.5
-  toneladas: 1.5
+  references: 
