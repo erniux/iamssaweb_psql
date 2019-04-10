@@ -13,12 +13,6 @@ class SolicitudsController < ApplicationController
 
   def new
     @solicitud = Solicitud.new
-    @solicitud.solicitud_servicio.build
-    @solicitud.solicitud_estructura.build
-    @solicitud.solicitud_tanque.build
-    @solicitud.solicitud_tuberium.build
-
-     
   end
 
   def edit
@@ -56,15 +50,15 @@ class SolicitudsController < ApplicationController
     # Only allow a trusted parameter "white list" through.
     def solicitud_params
       params.require(:solicitud).permit(:proyecto, :estatus, :comentarios, :user_id, :cliente_id, :cliente_contacto_id,
-        solicitud_estructura_attributes: [:estructura, :columna_pr, :columna_hss_o_cajon, :columna_ptr_o_monten, :trabes_pr, 
+        solicitud_estructura_attributes: [:id, :estructura, :columna_pr, :columna_hss_o_cajon, :columna_ptr_o_monten, :trabes_pr, 
                                           :trabes_ps, :trabes_angulo_con_ptr, :angulo_con_angulo, :ptr_con_ptr, :union_filete, 
                                           :union_a_tope, :espesor_columna, :espesor_trabe, :tiempo_fabricacion_montaje, 
                                           :toneladas],
-        solicitud_tuberium_attributes:   [:piso, :altura, :piso, :codigo_evaluacion, :diametro, :no_uniones, :cve_cedula],  
-        solicitud_tanque_attibutes:      [:tanque, :recipiente_a_presion, :espesor_cuerpo, :espesor_tapa, :espesor_diametro, 
+        solicitud_tuberium_attributes:   [:id, :piso, :altura, :piso, :codigo_evaluacion, :diametro, :no_uniones, :cve_cedula],  
+        solicitud_tanque_attibutes:      [:id, :tanque, :recipiente_a_presion, :espesor_cuerpo, :espesor_tapa, :espesor_diametro, 
                                           :espesor_capacidad, :espesor_longitud_altura, :no_sold_circunferencia, :no_sold_longitud, 
                                           :codigo_evaluacion], 
-        solicitud_servicio_attributes:   [:servicio, :columna_pr, :torque, :vacio, :iris, :prueba_doblez, :prueba_pintura, 
+        solicitud_servicio_attributes:   [:id, :servicio, :columna_pr, :torque, :vacio, :iris, :prueba_doblez, :prueba_pintura, 
                                           :doblez, :radiografia, :inspeccion_visual, :ultrasonido, :liquido_penetrante, 
                                           :part_magneticas, :supervicion, :calif_soldador, :calif_procedimiento, 
                                           :elab_procedimiento, :emision_procedimiento])

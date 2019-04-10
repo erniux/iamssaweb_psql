@@ -29,6 +29,7 @@ gem 'simple_form'
 gem 'faker'
 gem 'devise', '~> 4.6', '>= 4.6.1'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
+gem 'cocoon', '~> 1.2', '>= 1.2.12'
 
 
 # gem 'fullcalendar-rails'

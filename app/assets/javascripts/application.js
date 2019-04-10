@@ -18,6 +18,7 @@
 //= require fullcalendar
 //= require daterangepicker
 //= require_tree .
+//= require cocoon
 
 
 $(document).on('turbolinks:load', function() {

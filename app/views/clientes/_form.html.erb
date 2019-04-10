@@ -112,8 +112,9 @@
      </div>
   
   <h4><em>Contactos:</em></h4>
-  <table class="table">
-    <%= f.simple_fields_for :cliente_contactos do |c| %>
+  
+    
+    <table class="table">
     <thead>
          <tr>
            <th>Nombre </th>
@@ -125,21 +126,14 @@
            <th>Teléfono</th>
          </tr>
       </thead>
-    <tbody>
-       <td><%= c.input_field :nombre, label: 'Nombre' %></td>
-       <td><%= c.input_field :appaterno, label: 'Paterno' %></td>
-       <td><%= c.input_field :apmaterno, label: 'Materno' %></td>
-       <td><%= c.input_field :telefono_directo, label: 'Teléfono' %></td>
-       <td><%= c.input_field :correo, label: 'Correo'  %></td>
-       <td><%= c.input_field :puesto, label: 'Puesto' %></td>
-       <td><%= c.input_field :departamento, label: 'Departamento' %></td>
+      <%= f.simple_fields_for :cliente_contactos do |c| %>
+         <%= render 'cliente_contacto_fields', f: c %> 
     <% end %>
-  </tr>
-</tbody>
 </table>
-    
-    <%= link_to 'Agregar Contacto', :class => 'duplicate_nested_form' %>
-  </div>
+  
+<div>    
+    <%= link_to_add_association 'Agregar Contacto', f, :cliente_contactos %>
+</div>
 
 
   <div class="form-actions">
