@@ -1,44 +1,39 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Clientes</h1>
 <%= link_to 'Crear Cliente', new_cliente_path, class: "btn btn-info" %>
 <%= link_to 'Regresar a Catálogos', catalogos_path, class: "btn btn-success" %>
 <hr>
 
-<table>
+<table class="table">
   <thead>
     <tr>
-      <th>Nombre comercial</th>
-      <th>Rfc</th>
+      <th>Nombre Comercial</th>
+      <th>RFC</th>
       <th>Colonia</th>
       <th>Estado</th>
-      <th>Telefono oficina</th>
-      <th>Telefono celular</th>
-      <th>Telefono directo</th>
+      <th>Tel Oficina</th>
       <th>Correo</th>
-      <th colspan="3"></th>
+      <th colspan="3">Acciones</th>
     </tr>
   </thead>
 
   <tbody>
     <% @clientes.each do |cliente| %>
-      <tr>
+    <tr>
         <td><%= cliente.nombre_comercial %></td>
         <td><%= cliente.rfc %></td>
         <td><%= cliente.colonia %></td>
         <td><%= cliente.estado %></td>
         <td><%= cliente.telefono_oficina %></td>
-        <td><%= cliente.telefono_celular %></td>
-        <td><%= cliente.telefono_directro %></td>
         <td><%= cliente.correo %></td>
-        <td><%= link_to 'Show', cliente %></td>
-        <td><%= link_to "Editar", edit_cliente_path(cliente), class: "glyphicon glyphicon-pencil"  %></td>
-        <td><%= link_to 'Destroy', cliente, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <td><%= cliente.cliente_contactos %></td>
+
+         <td><%= link_to 'Mostrar', cliente %></td>
+         <td><%= link_to "Modificar", edit_cliente_path(cliente) %></td>
+         <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: '¿Confirma eliminar el Registro?' } %></td>
+      
     <% end %>
-
+   </tr>
   </tbody>
-
 </table>
 
-<br>
+  

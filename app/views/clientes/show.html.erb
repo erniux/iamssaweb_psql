@@ -1,145 +1,179 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-12">
+     <h3><%= @cliente.nombre_fiscal %></h3>
+     <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
+     <%= link_to 'Regresar', clientes_path %>
+   </div>
+ </div>
+ <div class = "row">
+   <div class="col-md-6">
+     <h4><strong>Nombre comercial:</strong>
+     <%= @cliente.nombre_comercial %></h4>
+   </div>
+   <div class="col-md-6">
+     <h4><strong>RFC:</strong>
+     <%= @cliente.rfc %></h4>
+   </div>
+</div>
+<br>
+<h4><em>Domicilio y medios de contacto:</em></h4>
+<div class="row">
+   <div class="col-md-3">
+     <strong>Calle numero:</strong>
+     <%= @cliente.calle_numero %>
+   </div>
+   <div class="col-md-3">
+     <strong>Colonia:</strong>
+     <%= @cliente.colonia %>
+   </div>
+   <div class="col-md-3">
+     <strong>Poblacion:</strong>
+     <%= @cliente.poblacion %>
+   </div>
+   
+   <div class="col-md-3">
+     <strong>Estado:</strong>
+     <%= @cliente.estado %>
+   </div>
+</div>
 
-<p>
-  <strong>Nombre fiscal:</strong>
-  <%= @cliente.nombre_fiscal %>
-</p>
+<div class="row">
+   <div class="col-md-3">
+      <strong>Codigo postal:</strong>
+      <%= @cliente.codigo_postal %>
+  </div>
+  <div class="col-md-3">
+      <strong>Telefono oficina:</strong>
+      <%= @cliente.telefono_oficina %>
+  </div>
 
-<p>
-  <strong>Nombre comercial:</strong>
-  <%= @cliente.nombre_comercial %>
-</p>
+  <div class="col-md-3">
+     <strong>Telefono celular:</strong>
+     <%= @cliente.telefono_celular %>
+  </div>
 
+   <div class="col-md-3">
+      <strong>Telefono directo:</strong>
+      <%= @cliente.telefono_directro %>
+   </div>
+   <div class="col-md-3">
+      <strong>Correo:</strong>
+      <%= @cliente.correo %>
+   </div>
+   <div class="col-md-3">
+      <strong>Medio contacto:</strong>
+      <%= @cliente.medio_contacto %>
+   </div>
+</div>
 
-<p>
-  <strong>Rfc:</strong>
-  <%= @cliente.rfc %>
-</p>
+<h4><em>Datos Financieros:</em></h4>
+<div class="row">
+   <div class="col-md-3">
+      <strong>Precio:</strong>
+      <%= @cliente.precio %>
+   </div>
 
-<p>
-  <strong>Calle numero:</strong>
-  <%= @cliente.calle_numero %>
-</p>
+   <div class="col-md-3">
+      <strong>Presupuesto:</strong>
+     <%= @cliente.presupuesto %>
+   </div>
 
-<p>
-  <strong>Colonia:</strong>
-  <%= @cliente.colonia %>
-</p>
+   <div class="col-md-3">
+     <strong>Credito:</strong>
+     <%= @cliente.credito %>
+   </div>
+</div>
+<br>
 
-<p>
-  <strong>Poblacion:</strong>
-  <%= @cliente.poblacion %>
-</p>
+<h4><em>Cobranza:</em></h4>
+<div class="row">
+  <h5><strong><em>Revisión</em></strong></h5>
+   <div class="col-md-2">   
+     <strong>lunes:</strong>
+     <%= check_box_tag('lunes:', @cliente.revision_lunes, @cliente.revision_lunes, disabled: true) %>
+   </div>
+   <div class="col-md-2">   
+      <strong>martes:</strong>
+      <%= check_box_tag('martes:', @cliente.revision_martes, @cliente.revision_martes, disabled: true) %>
+    </div>
+    <div class="col-md-2">   
+       <strong>miercoles:</strong>
+       <%= check_box_tag('miercoles:', @cliente.revision_miercoles, @cliente.revision_miercoles, disabled: true) %>
+    </div>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @cliente.estado %>
-</p>
+    <div class="col-md-2">   
+       <strong>jueves:</strong>
+       <%= check_box_tag('jueves:', @cliente.revision_jueves, @cliente.revision_jueves, disabled: true) %>
+    </div>
 
-<p>
-  <strong>Codigo postal:</strong>
-  <%= @cliente.codigo_postal %>
-</p>
+    <div class="col-md-2">   
+      <strong>viernes:</strong>
+      <%= check_box_tag('viernes:', @cliente.revision_viernes, @cliente.revision_viernes, disabled: true) %>
+    </div>
+    
+    <div class="col-md-2">   
+      <strong>sabado:</strong>
+      <%= check_box_tag('sabado:', @cliente.revision_sabado, @cliente.revision_sabado, disabled: true) %>
+    </div>
+  </div>
 
-<p>
-  <strong>Telefono oficina:</strong>
-  <%= @cliente.telefono_oficina %>
-</p>
+  <div class="row">
+     <h5><strong><em>Cobro</em></strong></h5>
+     <div class="col-md-2">
+        <strong>lunes:</strong>
+        <%= check_box_tag('lunes:', @cliente.cobro_lunes, @cliente.cobro_lunes, disabled: true) %>
+     </div>
+  
+     <div class="col-md-2">
+       <strong>martes:</strong>
+       <%= check_box_tag('martes:', @cliente.cobro_martes, @cliente.cobro_martes, disabled: true) %>
+     </div>
+       
+     <div class="col-md-2">
+       <strong>miercoles:</strong>
+       <%= check_box_tag('miercoles:', @cliente.cobro_miercoles, @cliente.cobro_miercoles, disabled: true) %>
+     </div>
+       
+     <div class="col-md-2">
+       <strong>jueves:</strong>
+       <%= check_box_tag('jueves:', @cliente.cobro_jueves, @cliente.cobro_jueves, disabled: true) %>
+     </div>
+       
+     <div class="col-md-2">
+       <strong>viernes:</strong>
+       <%= check_box_tag('viernes:', @cliente.cobro_viernes, @cliente.cobro_viernes, disabled: true) %>
+     </div>
+       
+     <div class="col-md-2">
+       <strong>sabado:</strong>
+       <%= check_box_tag('sa bado:', @cliente.cobro_sabado, @cliente.cobro_sabado, disabled: true) %>
+     </div>
+   </div>
+   <br>
 
-<p>
-  <strong>Telefono celular:</strong>
-  <%= @cliente.telefono_celular %>
-</p>
+   <h4><em>Contactos:</em></h4>
+   <table class="table">
+      <thead>
+         <tr>
+           <th>Nombre </th>
+           <th>Correo</th>
+           <th>Puesto</th>
+           <th>Departamento</th>
+           <th>Teléfono</th>
+         </tr>
+      </thead>
+      <tbody>
+         <% @cliente.cliente_contactos.each do |contacto| %>
+         <tr>
+            <td><%= contacto.nombre %> <%= contacto.appaterno %> <%= contacto.apmaterno %></td>
+            <td><%= contacto.correo %></td>
+            <td><%= contacto.puesto %></td>
+            <td><%= contacto.departamento %></td>
+            <td><%= contacto.telefono_directo %></td>
+      <% end %>
+    </tr>
+  </tbody>
+</table>
+</br>
+</br>
 
-<p>
-  <strong>Telefono directo:</strong>
-  <%= @cliente.telefono_directro %>
-</p>
-
-<p>
-  <strong>Correo:</strong>
-  <%= @cliente.correo %>
-</p>
-
-<p>
-  <strong>Medio contacto:</strong>
-  <%= @cliente.medio_contacto %>
-</p>
-
-<p>
-  <strong>Precio:</strong>
-  <%= @cliente.precio %>
-</p>
-
-<p>
-  <strong>Presupuesto:</strong>
-  <%= @cliente.presupuesto %>
-</p>
-
-<p>
-  <strong>Credito:</strong>
-  <%= @cliente.credito %>
-</p>
-
-<p>
-  <strong>Revision lunes:</strong>
-  <%= @cliente.revision_lunes %>
-</p>
-
-<p>
-  <strong>Revision martes:</strong>
-  <%= @cliente.revision_martes %>
-</p>
-
-<p>
-  <strong>Revision miercoles:</strong>
-  <%= @cliente.revision_miercoles %>
-</p>
-
-<p>
-  <strong>Revision jueves:</strong>
-  <%= @cliente.revision_jueves %>
-</p>
-
-<p>
-  <strong>Revision viernes:</strong>
-  <%= @cliente.revision_viernes %>
-</p>
-
-<p>
-  <strong>Revision sabado:</strong>
-  <%= @cliente.revision_sabado %>
-</p>
-
-<p>
-  <strong>Cobro lunes:</strong>
-  <%= @cliente.cobro_lunes %>
-</p>
-
-<p>
-  <strong>Cobro martes:</strong>
-  <%= @cliente.cobro_martes %>
-</p>
-
-<p>
-  <strong>Cobro miercoles:</strong>
-  <%= @cliente.cobro_miercoles %>
-</p>
-
-<p>
-  <strong>Cobro jueves:</strong>
-  <%= @cliente.cobro_jueves %>
-</p>
-
-<p>
-  <strong>Cobro viernes:</strong>
-  <%= @cliente.cobro_viernes %>
-</p>
-
-<p>
-  <strong>Cobro sabado:</strong>
-  <%= @cliente.cobro_sabado %>
-</p>
-
-<%= link_to 'Edit', edit_cliente_path(@cliente) %> |
-<%= link_to 'Back', clientes_path %>

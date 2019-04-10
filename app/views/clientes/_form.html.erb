@@ -2,55 +2,150 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nombre_fiscal %>
-    <%= f.input :nombre_comercial %>
-    <%= f.input :rfc %>
-    <%= f.input :calle_numero %>
-    <%= f.input :colonia %>
-    <%= f.input :poblacion %>
-    <%= f.input :estado %>
-    <%= f.input :codigo_postal %>
-    <%= f.input :telefono_oficina %>
-    <%= f.input :telefono_celular %>
-    <%= f.input :telefono_directro %>
-    <%= f.input :correo %>
-    <%= f.input :medio_contacto %>
-    <%= f.input :precio %>
-    <%= f.input :presupuesto %>
-    <%= f.input :credito %>
-    <%= f.input :revision_lunes %>
-    <%= f.input :revision_martes %>
-    <%= f.input :revision_miercoles %>
-    <%= f.input :revision_jueves %>
-    <%= f.input :revision_viernes %>
-    <%= f.input :revision_sabado %>
-    <%= f.input :cobro_lunes %>
-    <%= f.input :cobro_martes %>
-    <%= f.input :cobro_miercoles %>
-    <%= f.input :cobro_jueves %>
-    <%= f.input :cobro_viernes %>
-    <%= f.input :cobro_sabado %>
-  </div>
+    <div class="row">
+       <%= f.input :nombre_fiscal, size: 100 %>
+       <div class="col-md-8">
+          <%= f.input :nombre_comercial, size: 50  %>
+       </div>
+       <div class="col-md-4">
+          <%= f.input :rfc, label: 'RFC' %>
+       </div>
+    </div>
+    <br>
+    <em>Domicilio Fiscal</em><br>
 
-  <div>
+    <div class = "row">
+      <div class="col-md-4">
+         <%= f.input :calle_numero, label: 'Calle y Número' %>
+       </div>
+       <div class="col-md-4">
+         <%= f.input :colonia, label: 'Colonia' %>
+       </div>
+       <div class="col-md-4">
+         <%= f.input :poblacion, label: 'Población' %>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-md-4">
+         <%= f.input :estado, label: 'Estado' %>
+       </div>
+       <div class="col-md-4">
+          <%= f.input :codigo_postal, label: 'Código Postal' %>
+        </div>
+      </div>
+      <br>
+    <em>Medios de Contacto y Localización</em><br>
+      <div class="row">
+        <div class="col-md-4">
+          <%= f.input :telefono_oficina, label: 'Teléfono Oficina' %>
+        </div>
+         <div class="col-md-4">
+          <%= f.input :telefono_celular, label: 'Teléfono Celular' %>
+         </div>
+         <div class="col-md-4">
+            <%= f.input :telefono_directro, label: 'Teléfono Directo' %>
+         </div>
+         <div class="col-md-4">
+            <%= f.input :correo, label: 'Correo Eléctronico' %>
+          </div>
+          <div class="col-md-4">
+          <%= f.input :medio_contacto, collection: ['Internet', 'Ya es Cliente', 'Recomendación', 'Sección Amarilla'] %>
+        </div>
+      </div>
+
+    <em>Finanzas</em><br>
+      <div class="row">
+        <div class="col-md-4">
+           <%= f.input :precio, label: 'Precio' %>
+        </div>
+        <div class="col-md-4">
+           <%= f.input :presupuesto, label: 'Presupuesto' %>
+         </div>
+         <div class="col-md-4">
+            <%= f.input :credito, label: 'Crédito' %>
+         </div>
+       </div>
+
+    <h4><em>Cobranza:</em></h4>
+    <div class="row">
+       <h5><strong><em>Revisión</em></strong></h5>
+       <div class="col-md-2">   
+          <%= f.input :revision_lunes, label: 'Lunes' %>
+        </div>
+        <div class="col-md-2">   
+           <%= f.input :revision_martes, label: 'Martes' %>
+        </div>
+        <div class="col-md-2">   
+            <%= f.input :revision_miercoles, label: 'Miércoles' %>
+        </div>
+        <div class="col-md-2">   
+            <%= f.input :revision_jueves, label: 'Jueves' %>
+        </div>
+        <div class="col-md-2">   
+          <%= f.input :revision_viernes, label: 'Viernes' %>
+        </div>
+        <div class="col-md-2">   
+          <%= f.input :revision_sabado, label: 'Sábado' %>
+        </div>
+      </div>
+          
+      <div class="row">
+         <h5><strong><em>Cobro</em></strong></h5>
+      <div class="col-md-2">   
+         <%= f.input :cobro_lunes, label: 'Lunes' %>
+      </div>
+      <div class="col-md-2">   
+        <%= f.input :cobro_martes, label: 'Martes' %>
+      </div>
+      <div class="col-md-2">   
+         <%= f.input :cobro_miercoles, label: 'Miércoles' %>
+      </div>
+      <div class="col-md-2">   
+        <%= f.input :cobro_jueves, label: 'Jueves' %>
+      </div>
+      <div class="col-md-2">   
+        <%= f.input :cobro_viernes, label: 'Viernes' %>
+      </div>
+       <div class="col-md-2">   
+         <%= f.input :cobro_sabado, label: 'Sábado' %>
+       </div>
+     </div>
+  
+  <h4><em>Contactos:</em></h4>
+  <table class="table">
     <%= f.simple_fields_for :cliente_contactos do |c| %>
-       <%= c.input :nombre %>
-       <%= c.input :appaterno %>
-       <%= c.input :apmaterno %>
-       <%= c.input :telefono_directo %>
-       <%= c.input :correo %>
-       <%= c.input :puesto %>
-       <%= c.input :departamento %>
+    <thead>
+         <tr>
+           <th>Nombre </th>
+           <th>Paterno </th>
+           <th>Materno </th>
+           <th>Correo</th>
+           <th>Puesto</th>
+           <th>Departamento</th>
+           <th>Teléfono</th>
+         </tr>
+      </thead>
+    <tbody>
+       <td><%= c.input_field :nombre, label: 'Nombre' %></td>
+       <td><%= c.input_field :appaterno, label: 'Paterno' %></td>
+       <td><%= c.input_field :apmaterno, label: 'Materno' %></td>
+       <td><%= c.input_field :telefono_directo, label: 'Teléfono' %></td>
+       <td><%= c.input_field :correo, label: 'Correo'  %></td>
+       <td><%= c.input_field :puesto, label: 'Puesto' %></td>
+       <td><%= c.input_field :departamento, label: 'Departamento' %></td>
     <% end %>
-
+  </tr>
+</tbody>
+</table>
     
-    <%= link_to 'Add Another Asset', '', :class => 'duplicate_nested_form' %>
-
+    <%= link_to 'Agregar Contacto', :class => 'duplicate_nested_form' %>
   </div>
 
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Guardar Registro', class: 'btn btn-info' %>
   </div>
 <% end %>
+
+ 
 

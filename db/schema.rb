@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190408013026) do
+ActiveRecord::Schema.define(version: 20190408141839) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(version: 20190408013026) do
     t.string   "codigo_evaluacion"
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.boolean  "tuberia"
     t.index ["solicitud_id"], name: "index_solicitud_tuberia_on_solicitud_id", using: :btree
   end
 

@@ -29,6 +29,7 @@ class ClientesController < ApplicationController
 
   def update
     if @cliente.update(cliente_params)
+      @cliente.cliente_contactos.build
       redirect_to @cliente, notice: 'Cliente was successfully updated.'
     else
       render :edit

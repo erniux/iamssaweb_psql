@@ -3,33 +3,15 @@
 
   <div class="form-inputs">
     <%= f.input :proyecto %>
-    <%= f.input :estatus %>
+    <%= f.input :estatus, collection: ['Emitida', 'Cotizada', 'Cancelada']  %>
     <%= f.input :comentarios %>
     <%= f.association :user %>
     <%= f.association :cliente, label_method: :nombre_comercial, value_method: :id, include_blank: false %>
     <%= f.association :cliente_contacto, label_method: :nombre,  value_method: :id, include_blank: false %>
   </div>
 
-  <div>
-      <%= f.simple_fields_for :solicitud_estructura do |estructura| %>
-         <%= estructura.input :estructura %>
-         <%= estructura.input :columna_pr %>
-         <%= estructura.input :columna_hss_o_cajon %>
-         <%= estructura.input :columna_ptr_o_monten %>
-         <%= estructura.input :trabes_pr %>
-         <%= estructura.input :trabes_ps %>
-         <%= estructura.input :trabes_angulo_con_ptr %>
-         <%= estructura.input :angulo_con_angulo %>
-         <%= estructura.input :ptr_con_ptr %>
-         <%= estructura.input :union_filete %>
-         <%= estructura.input :union_a_tope %>
-         <%= estructura.input :espesor_columna %>
-         <%= estructura.input :espesor_trabe %>
-         <%= estructura.input :tiempo_fabricacion_montaje %>
-         <%= estructura.input :toneladas %>
-      <% end %>
-</div>
-<div>
+  <strong>SERVICIO</strong>
+   <div>
       <%= f.simple_fields_for :solicitud_servicio do |servicio| %>
          <%= servicio.input :torque %>
          <%= servicio.input :vacio %>
@@ -49,7 +31,46 @@
          <%= servicio.input :emision_procedimiento %>
       <% end %>
     </div>
+  
+  <strong>ESTRUCTURA</strong>
+  <div>
+      <%= f.simple_fields_for :solicitud_estructura do |estructura| %>
+         <%= estructura.input :estructura %>
+         <%= estructura.input :columna_pr %>
+         <%= estructura.input :columna_hss_o_cajon %>
+         <%= estructura.input :columna_ptr_o_monten %>
+         <%= estructura.input :trabes_pr %>
+         <%= estructura.input :trabes_ps %>
+         <%= estructura.input :trabes_angulo_con_ptr %>
+         <%= estructura.input :angulo_con_angulo %>
+         <%= estructura.input :ptr_con_ptr %>
+         <%= estructura.input :union_filete %>
+         <%= estructura.input :union_a_tope %>
+         <%= estructura.input :espesor_columna %>
+         <%= estructura.input :espesor_trabe %>
+         <%= estructura.input :tiempo_fabricacion_montaje %>
+         <%= estructura.input :toneladas %>
+      <% end %>
+   </div>
 
+    <strong>TUBERIA</strong>
+    <div>
+      <%= f.simple_fields_for :solicitud_tuberia do |tuberia| %>
+         <%= tuberia.input :tuberia %>
+         <%= tuberia.input :tanque %>
+         <%= tuberia.input :recipiente_a_presion %>
+         <%= tuberia.input :espesor_cuerpo %>
+         <%= tuberia.input :espesor_tapa %>
+         <%= tuberia.input :espesor_diametro %>
+         <%= tuberia.input :espesor_capacidad %>
+         <%= tuberia.input :espesor_longitud_altura %>
+         <%= tuberia.input :no_sold_circunferencia %>
+         <%= tuberia.input :no_sold_longitud %>
+         <%= tuberia.input :codigo_evaluacion %>
+      <% end %>
+    </div>
+    
+    <strong>TANQUE</strong>
     <div>
       <%= f.simple_fields_for :solicitud_tanque do |tanque| %>
          <%= tanque.input :tanque %>
@@ -65,23 +86,8 @@
       <% end %>
     </div>
 
-    <div>
-      <%= f.simple_fields_for :solicitud_tuberia do |tuberia| %>
-         <%= tuberia.input :tanque %>
-         <%= tuberia.input :recipiente_a_presion %>
-         <%= tuberia.input :espesor_cuerpo %>
-         <%= tuberia.input :espesor_tapa %>
-         <%= tuberia.input :espesor_diametro %>
-         <%= tuberia.input :espesor_capacidad %>
-         <%= tuberia.input :espesor_longitud_altura %>
-         <%= tuberia.input :no_sold_circunferencia %>
-         <%= tuberia.input :no_sold_longitud %>
-         <%= tuberia.input :codigo_evaluacion %>
-      <% end %>
-    </div>
-
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Guardar Registro" %>
   </div>
 <% end %>
 
