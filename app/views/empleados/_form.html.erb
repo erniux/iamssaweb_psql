@@ -1,0 +1,183 @@
+<%= simple_form_for(@empleado) do |f| %>
+
+  <div class="form-inputs">
+        <div class="row">
+            <div class="col-md-10">
+                <%= f.input :Nombre, size: 100 %>
+            </div>
+            <div class="col-md-2">
+                <h3><%= f.input :Activo %></h3>
+            </div>
+      </div>
+      <div class="row">
+          <div class="col-md-3">
+             <%= f.input :NoCredencial, label: 'Número de Credencial' %>
+         </div>
+         <div class="col-md-3">
+              <%= f.input :Iniciales %>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+            <%= f.input :Direccion, label: 'Dirección' %>
+          </div>
+          <div class="col-md-6">
+            <%= f.input :Colonia %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <%= f.input :Poblacion, label: 'Población' %>
+        </div>
+        <div class="col-md-5">
+            <%= f.input :Estado %>
+        </div>
+        <div class="col-md-2">
+            <%= f.input :CP, label: 'Código Postal' %>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">    
+           <%= f.input :Telefono, label: 'Teléfono' %>
+       </div>
+       <div class="col-md-3">    
+           <%= f.input :Celular %>
+       </div>
+       <div class="col-md-3">    
+           <%= f.input :Nextel %>
+       </div>
+       <div class="col-md-3">    
+           <%= f.input :Radio %>
+       </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+        <%= f.input :Nacimiento, label: 'Fecha de Nacimiento' %>
+    </div>
+    <div class="col-md-6">
+        <%= f.input :Contratacion, label: 'Fecha de Contratación' %>
+    </div>
+ </div>
+ <div class="row">
+    <div class="col-md-4">
+        <%= f.input :Puesto %>
+    </div>
+    <div class="col-md-4">
+        <%= f.input :Depto, label: 'Departamento' %>
+    </div>
+    <div class="col-md-4">
+        <%= f.input :IdEntidad, label: 'Entidad' %>
+    </div>
+ </div>
+
+ <div class="row">
+    <div class="col-md-4">
+        <%= f.input :RFC, label: 'RFC' %>
+    </div>
+    <div class="col-md-4">
+        <%= f.input :CURP, label: 'CURP' %>
+    </div>
+    <div class="col-md-4">
+        <%= f.input :IMSS, label: 'IMSS' %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1">
+       <%= f.input :Licencia %>
+    </div> 
+    <div class="col-md-1">
+        <%= f.input :Tipo %>
+    </div>
+    <div class="col-md-5">
+        <%= f.input :Exped, label: 'Fecha Expedición' %>
+    </div>
+    <div class="col-md-5">
+        <%= f.input :Venc, label: 'Fecha Vencimiento' %> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-1">
+       <%= f.input :Licencia2 %>
+    </div> 
+    <div class="col-md-1">
+        <%= f.input :Tipo2 %>
+    </div>
+    <div class="col-md-5">
+        <%= f.input :Exped2, label: 'Fecha Expedición' %>
+    </div>
+    <div class="col-md-5">
+        <%= f.input :Venc2, label: 'Fecha Vencimiento' %> 
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <%= f.input :RazonSocial, label: 'Razón Social' %>
+    </div>
+    <div class="col-md-6">
+        <%= f.input :Examinador %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <%= f.input :Ocupacion, label: 'Ocupación' %>
+    </div>
+    <div class="col-md-3">
+        <%= f.input :Cedula, label: 'Cédula' %>
+    </div>
+    <div class="col-md-3">
+        <%= f.input :Registro %>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <%= f.input :Agudeza, label: 'Agudeza Visual' %>
+    </div>
+    <div class="col-md-1">
+        <%= f.input :Jaeger %>
+    </div>
+    <div class="col-md-1">
+        <%= f.input :Colores %>
+    </div>
+    <div class="col-md-1">
+        <%= f.input :Grises %>
+    </div>
+    
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <%= f.input :UltExa, label: 'Ultimo Exámen' %>
+        
+    </div>
+    <div class="col-md-6">
+        <%= f.input :ProxExa, label: 'Próximo Exámen' %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <%= f.input :Informar, label: 'En caso de emergencia llamar a:' %>
+    </div>
+    <div class="col-md-3">
+        <%= f.input :Parentesco %>
+    </div>
+    <div class="col-md-3">
+        <%= f.input :TelInformar, label: 'Teléfono' %>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <%= f.input :GrupoSanguineo, label: 'Grupo Sanguineo' %>
+    </div>
+    <div class="col-md-4">
+        <%= f.input :AlergiaMedicamento, label: 'Alergia a Medicamentos' %>
+    </div>
+    <div class="col-md-4">
+        <%= f.input :EnfCronicas, label: 'Enfermedades Crónicas' %>
+    
+    </div>  
+</div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Guardar Registro' %>
+  </div>
+<% end %>

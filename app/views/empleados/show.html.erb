@@ -1,0 +1,239 @@
+<div class="row">
+  <div class="col-md-10">
+    <h3><%= @empleado.Nombre %></h3>
+  </div>
+  <div class=col-md-2">
+    <h3>Activo <%= check_box_tag('Activo:', @empleado.Activo, @empleado.Activo, disabled: true) %></h3>
+    <%= link_to 'Modificar', edit_empleado_path(@empleado) %> |
+    <%= link_to 'Regresar', empleados_path %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-6">
+    <strong>Número de Credenial:</strong>
+    <%= @empleado.NoCredencial %>
+  </div>
+  <div class="col-md-6">
+    <strong>Iniciales:</strong>
+    <%= @empleado.Iniciales %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-3">
+    <strong>Dirección:</strong>
+    <%= @empleado.Direccion %>
+  </div>
+  <div class="col-md-2">
+    <strong>Colonia:</strong>
+    <%= @empleado.Colonia %>
+  </div>
+  <div class="col-md-2">
+    <strong>Población:</strong>
+    <%= @empleado.Poblacion %>
+  </div>
+  <div class="col-md-2">
+    <strong>Estado:</strong>
+    <%= @empleado.Estado %>
+  </div>
+  <div class="col-md-2">
+    <strong>Código Postal</strong>
+    <%= @empleado.CP %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-3">
+    <strong>Teléfono:</strong>
+    <%= @empleado.Telefono %>
+  </div>
+  <div class="col-md-3">
+    <strong>Celular:</strong>
+    <%= @empleado.Celular %>
+  </div>
+  <div class="col-md-3">
+    <strong>Nextel:</strong>
+    <%= @empleado.Nextel %>
+  </div>
+  <div class="col-md-3">
+    <strong>Radio:</strong>
+    <%= @empleado.Radio %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-6">
+    <strong>Fecha de Nacimiento:</strong>
+    <%= @empleado.Nacimiento %>
+  </div>
+  <div class="col-md-6">
+    <strong>Fecha de Contratacioón:</strong>
+    <%= @empleado.Contratacion %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-2">
+    <strong>Puesto:</strong>
+    <%= @empleado.Puesto %>
+  </div>
+  <div class="col-md-3">
+    <strong>Departamento:</strong>
+    <%= @empleado.Depto %>
+  </div>
+  <div class="col-md-2">
+    <strong>RFC:</strong>
+    <%= @empleado.RFC %>
+  </div>
+  <div class="col-md-2">
+    <strong>CURP:</strong>
+    <%= @empleado.CURP %>
+  </div>
+  <div class="col-md-3">
+    <strong>IMSS:</strong>
+    <%= @empleado.IMSS %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-2">
+    <strong>Licencia:</strong>
+    <%= @empleado.Licencia %>
+  </div>
+  <div class="col-md-2">
+    <strong>Tipo:</strong>
+    <%= @empleado.Tipo %>
+  </div>
+  <div class="col-md-4">
+    <strong>Fecha Expedición:</strong>
+    <%= @empleado.Exped %>
+  </div>
+  <div class="col-md-4">
+    <strong>Fecha Vencimiento:</strong>
+    <%= @empleado.Venc %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-2">
+    <strong>Licencia 2:</strong>
+    <%= @empleado.Licencia2 %>
+  </div>
+  <div class="col-md-2">
+    <strong>Tipo:</strong>
+    <%= @empleado.Tipo2 %>
+  </div>
+  <div class="col-md-4">
+    <strong>Fecha Expedición:</strong>
+    <%= @empleado.Exped2 %>
+  </div>
+  <div class="col-md-4">
+    <strong>Fecha Vencimiento:</strong>
+    <%= @empleado.Venc2 %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-3"> 
+    <strong>Razón Social:</strong>
+    <%= @empleado.RazonSocial %>
+  </div>
+  <div class="col-md-3"> 
+    <strong>Examinador:</strong>
+    <%= @empleado.Examinador %>
+  </div>
+  <div class="col-md-3"> 
+    <strong>Ocupacion:</strong>
+    <%= @empleado.Ocupacion %>
+  </div>
+  <div class="col-md-3"> 
+    <strong>Cedula:</strong>
+    <%= @empleado.Cedula %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-3"> 
+    <strong>Registro:</strong>
+    <%= @empleado.Registro %>
+  </div>
+  <div class="col-md-2"> 
+    <strong>Agudeza:</strong>
+    <%= check_box_tag('Agudeza:', @empleado.Agudeza, @empleado.Agudeza, disabled: true) %>
+  </div>
+  <div class="col-md-2"> 
+    <strong>Jaeger:</strong>
+    <%= check_box_tag('Jaeger:', @empleado.Jaeger, @empleado.Jaeger, disabled: true) %>
+  </div>
+  <div class="col-md-2"> 
+    <strong>Colores:</strong>
+    <%= check_box_tag('Colores:', @empleado.Colores, @empleado.Colores, disabled: true) %>
+  </div>
+  <div class="col-md-2"> 
+    <strong>Grises:</strong>
+    <%= check_box_tag('Grises:', @empleado.Grises, @empleado.Grises, disabled: true) %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-6"> 
+    <strong>Último Exámen:</strong>
+    <%= @empleado.UltExa %>
+  </div>
+  <div class="col-md-6"> 
+    <strong>Próximo Exámen:</strong>
+    <%= @empleado.ProxExa %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-4"> 
+    <strong>Llamar a:</strong>
+    <%= @empleado.Informar %>
+  </div>
+  <div class="col-md-4"> 
+    <strong>Parentesco:</strong>
+    <%= @empleado.Parentesco %>
+  </div>
+  <div class="col-md-4"> 
+    <strong>Teléfono:</strong>
+    <%= @empleado.TelInformar %>
+  </div>
+</div>
+<br>
+
+<div class="row">
+  <div class="col-md-4"> 
+    <strong>Grupo Sanguineo:</strong>
+    <%= @empleado.GrupoSanguineo %>
+  </div>
+  <div class="col-md-4"> 
+    <strong>Alergias:</strong>
+    <%= @empleado.AlergiaMedicamento %>
+  </div>
+  <div class="col-md-4"> 
+    <strong>Enfermedades Crónicas:</strong>
+    <%= @empleado.EnfCronicas %>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+
+   
+
+
+

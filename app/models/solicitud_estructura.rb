@@ -1,3 +1,3 @@
 class SolicitudEstructura < ApplicationRecord
-	belongs_to :solicitud
+	belongs_to :solicituds
 end

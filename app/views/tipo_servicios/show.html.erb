@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cve tipo servicio:</strong>
+  <%= @tipo_servicio.cve_tipo_servicio %>
+</p>
+
+<p>
+  <strong>Detalle servicio:</strong>
+  <%= @tipo_servicio.detalle_servicio %>
+</p>
+
+<%= link_to 'Edit', edit_tipo_servicio_path(@tipo_servicio) %> |
+<%= link_to 'Back', tipo_servicios_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190408141839) do
+ActiveRecord::Schema.define(version: 20190415191211) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,110 @@ ActiveRecord::Schema.define(version: 20190408141839) do
     t.datetime "updated_at",         null: false
   end
 
+  create_table "detalle_usuarios", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "NoCredencial"
+    t.string   "Nombre"
+    t.string   "Iniciales"
+    t.string   "Direccion"
+    t.string   "Colonia"
+    t.string   "Poblacion"
+    t.string   "Estado"
+    t.string   "CP"
+    t.string   "Telefono"
+    t.string   "Celular"
+    t.string   "Nextel"
+    t.string   "Radio"
+    t.date     "Nacimiento"
+    t.string   "Contratacion"
+    t.string   "Puesto"
+    t.string   "Depto"
+    t.string   "IdEntidad"
+    t.string   "RFC"
+    t.string   "CURP"
+    t.string   "IMSS"
+    t.string   "Licencia"
+    t.string   "Tipo"
+    t.string   "Exped"
+    t.date     "Venc"
+    t.string   "Licencia2"
+    t.string   "Tipo2"
+    t.date     "Exped2"
+    t.string   "Venc2"
+    t.string   "RazonSocial"
+    t.string   "Examinador"
+    t.string   "Ocupacion"
+    t.string   "Cedula"
+    t.string   "Registro"
+    t.string   "Agudeza"
+    t.string   "Jaeger"
+    t.string   "Colores"
+    t.string   "Grises"
+    t.string   "UltExa"
+    t.string   "ProxExa"
+    t.string   "Informar"
+    t.string   "Parentesco"
+    t.string   "TelInformar"
+    t.string   "GrupoSanguineo"
+    t.string   "AlergiaMedicamento"
+    t.string   "EnfCronicas"
+    t.string   "Activo"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["user_id"], name: "index_detalle_usuarios_on_user_id", using: :btree
+  end
+
+  create_table "empleados", force: :cascade do |t|
+    t.integer  "NoCredencial"
+    t.string   "Nombre"
+    t.string   "Iniciales"
+    t.string   "Direccion"
+    t.string   "Colonia"
+    t.string   "Poblacion"
+    t.string   "Estado"
+    t.string   "CP"
+    t.string   "Telefono"
+    t.string   "Celular"
+    t.string   "Nextel"
+    t.string   "Radio"
+    t.datetime "Nacimiento"
+    t.datetime "Contratacion"
+    t.string   "Puesto"
+    t.string   "Depto"
+    t.integer  "IdEntidad"
+    t.string   "RFC"
+    t.string   "CURP"
+    t.string   "IMSS"
+    t.string   "Licencia"
+    t.string   "Tipo"
+    t.datetime "Exped"
+    t.datetime "Venc"
+    t.string   "Licencia2"
+    t.string   "Tipo2"
+    t.datetime "Exped2"
+    t.datetime "Venc2"
+    t.string   "RazonSocial"
+    t.string   "Examinador"
+    t.string   "Ocupacion"
+    t.string   "Cedula"
+    t.string   "Registro"
+    t.string   "Agudeza"
+    t.boolean  "Jaeger"
+    t.boolean  "Colores"
+    t.boolean  "Grises"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.boolean  "Activo"
+    t.datetime "ProxExa"
+    t.string   "Informar"
+    t.string   "Parentesco"
+    t.string   "TelInformar"
+    t.string   "GrupoSanguineo"
+    t.string   "AlergiaMedicamento"
+    t.string   "EnfCronicas"
+    t.datetime "UltExa"
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.string   "color"
@@ -98,46 +202,59 @@ ActiveRecord::Schema.define(version: 20190408141839) do
     t.datetime "end"
   end
 
+  create_table "servicios", force: :cascade do |t|
+    t.text     "concepto"
+    t.float    "cantidad"
+    t.float    "precio_a"
+    t.float    "precio_b"
+    t.float    "precio_c"
+    t.string   "entidad"
+    t.string   "tipo_servicio"
+    t.string   "material"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "solicitud_estructuras", force: :cascade do |t|
     t.integer  "solicitud_id"
-    t.boolean  "estructura"
-    t.boolean  "columna_pr"
-    t.boolean  "columna_hss_o_cajon"
-    t.boolean  "columna_ptr_o_monten"
-    t.boolean  "trabes_pr"
-    t.boolean  "trabes_ps"
-    t.boolean  "trabes_angulo_con_ptr"
-    t.boolean  "angulo_con_angulo"
-    t.boolean  "ptr_con_ptr"
-    t.boolean  "union_filete"
-    t.boolean  "union_a_tope"
+    t.boolean  "estructura",                 default: false
+    t.boolean  "columna_pr",                 default: false
+    t.boolean  "columna_hss_o_cajon",        default: false
+    t.boolean  "columna_ptr_o_monten",       default: false
+    t.boolean  "trabes_pr",                  default: false
+    t.boolean  "trabes_ps",                  default: false
+    t.boolean  "trabes_angulo_con_ptr",      default: false
+    t.boolean  "angulo_con_angulo",          default: false
+    t.boolean  "ptr_con_ptr",                default: false
+    t.boolean  "union_filete",               default: false
+    t.boolean  "union_a_tope",               default: false
     t.float    "espesor_columna"
     t.float    "espesor_trabe"
     t.float    "tiempo_fabricacion_montaje"
     t.float    "toneladas"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.datetime "created_at",                                 null: false
+    t.datetime "updated_at",                                 null: false
     t.index ["solicitud_id"], name: "index_solicitud_estructuras_on_solicitud_id", using: :btree
   end
 
   create_table "solicitud_servicios", force: :cascade do |t|
-    t.integer  "solicitud_id"
-    t.boolean  "torque"
-    t.boolean  "vacio"
-    t.boolean  "iris"
-    t.boolean  "prueba_doblez"
-    t.boolean  "prueba_pintura"
-    t.boolean  "doblez"
-    t.boolean  "radiografia"
-    t.boolean  "inspeccion_visual"
-    t.boolean  "ultrasonido"
-    t.boolean  "liquido_penetrante"
-    t.boolean  "part_magneticas"
-    t.boolean  "supervicion"
-    t.boolean  "calif_soldador"
-    t.boolean  "calif_procedimiento"
-    t.boolean  "elab_procedimiento"
-    t.boolean  "emision_procedimiento"
+    t.integer  "solicitud_id",          null: false
+    t.boolean  "torque",                null: false
+    t.boolean  "vacio",                 null: false
+    t.boolean  "iris",                  null: false
+    t.boolean  "prueba_doblez",         null: false
+    t.boolean  "prueba_pintura",        null: false
+    t.boolean  "doblez",                null: false
+    t.boolean  "radiografia",           null: false
+    t.boolean  "inspeccion_visual",     null: false
+    t.boolean  "ultrasonido",           null: false
+    t.boolean  "liquido_penetrante",    null: false
+    t.boolean  "part_magneticas",       null: false
+    t.boolean  "supervicion",           null: false
+    t.boolean  "calif_soldador",        null: false
+    t.boolean  "calif_procedimiento",   null: false
+    t.boolean  "elab_procedimiento",    null: false
+    t.boolean  "emision_procedimiento", null: false
     t.datetime "created_at",            null: false
     t.datetime "updated_at",            null: false
     t.index ["solicitud_id"], name: "index_solicitud_servicios_on_solicitud_id", using: :btree
@@ -145,7 +262,7 @@ ActiveRecord::Schema.define(version: 20190408141839) do
 
   create_table "solicitud_tanques", force: :cascade do |t|
     t.integer  "solicitud_id"
-    t.boolean  "tanque"
+    t.boolean  "tanque",                  default: false
     t.boolean  "recipiente_a_presion"
     t.float    "espesor_cuerpo"
     t.float    "espesor_tapa"
@@ -155,8 +272,8 @@ ActiveRecord::Schema.define(version: 20190408141839) do
     t.float    "no_sold_circunferencia"
     t.float    "no_sold_longitud"
     t.float    "codigo_evaluacion"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.index ["solicitud_id"], name: "index_solicitud_tanques_on_solicitud_id", using: :btree
   end
 
@@ -185,11 +302,78 @@ ActiveRecord::Schema.define(version: 20190408141839) do
     t.integer  "user_id"
     t.integer  "cliente_id"
     t.integer  "cliente_contacto_id"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+    t.boolean  "estructura_columna_pr"
+    t.boolean  "estructura_columna_hss_o_cajon"
+    t.boolean  "estructura_columna_ptr_o_monten"
+    t.boolean  "estructura_trabes_pr"
+    t.boolean  "estructura_trabes_ps"
+    t.boolean  "estructura_trabes_angulo_con_ptr"
+    t.boolean  "estructura_angulo_con_angulo"
+    t.boolean  "estructura_ptr_con_ptr"
+    t.boolean  "estructura_union_filete"
+    t.boolean  "estructura_union_a_tope"
+    t.float    "estructura_espesor_columna"
+    t.float    "estructura_espesor_trabe"
+    t.float    "estructura_tiempo_fabricacion_montaje"
+    t.float    "estructura_toneladas"
+    t.boolean  "servicio_torque"
+    t.boolean  "servicio_vacio"
+    t.boolean  "servicio_iris"
+    t.boolean  "servicio_prueba_doblez"
+    t.boolean  "servicio_prueba_pintura"
+    t.boolean  "servicio_doblez"
+    t.boolean  "servicio_radiografia"
+    t.boolean  "servicio_inspeccion_visual"
+    t.boolean  "servicio_ultrasonido"
+    t.boolean  "servicio_liquido_penetrante"
+    t.boolean  "servicio_part_magneticas"
+    t.boolean  "servicio_supervicion"
+    t.boolean  "servicio_calif_soldador"
+    t.boolean  "servicio_calif_procedimiento"
+    t.boolean  "servicio_elab_procedimiento"
+    t.boolean  "servicio_emision_procedimiento"
+    t.boolean  "tanque_recipiente_a_presion"
+    t.float    "tanque_espesor_cuerpo"
+    t.float    "tanque_espesor_tapa"
+    t.float    "tanque_espesor_diametro"
+    t.float    "tanque_espesor_capacidad"
+    t.float    "tanque_espesor_longitud_altura"
+    t.float    "tanque_no_sold_circunferencia"
+    t.float    "tanque_no_sold_longitud"
+    t.float    "tanque_codigo_evaluacion"
+    t.float    "tuberia_uniones_hasta_2_y_medio"
+    t.float    "tuberia_uniones_3_a_8"
+    t.float    "tuberia_uniones_10_a_14"
+    t.float    "tuberia_uniones_16_a_20"
+    t.float    "tuberia_uniones_24_a_26"
+    t.float    "tuberia_uniones_30_a_32"
+    t.float    "tuberia_uniones_34_a_36"
+    t.float    "tuberia_uniones_38_a_42"
+    t.float    "tuberia_uniones_44_a_48"
+    t.float    "tuberia_cedula_hasta_2_y_medio"
+    t.float    "tuberia_cedula_3_a_8"
+    t.float    "tuberia_cedula_10_a_14"
+    t.float    "tuberia_cedula_16_a_20"
+    t.float    "tuberia_cedula_24_a_26"
+    t.float    "tuberia_cedula_30_a_32"
+    t.float    "tuberia_cedula_34_a_36"
+    t.float    "tuberia_cedula_38_a_42"
+    t.float    "tuberia_cedula_44_a_48"
+    t.float    "tuberia_altura_valor"
+    t.boolean  "tuberia_altura"
+    t.string   "tuberia_codigo_evaluacion"
     t.index ["cliente_contacto_id"], name: "index_solicituds_on_cliente_contacto_id", using: :btree
     t.index ["cliente_id"], name: "index_solicituds_on_cliente_id", using: :btree
     t.index ["user_id"], name: "index_solicituds_on_user_id", using: :btree
+  end
+
+  create_table "tipo_servicios", force: :cascade do |t|
+    t.string   "cve_tipo_servicio"
+    t.string   "detalle_servicio"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -207,6 +391,7 @@ ActiveRecord::Schema.define(version: 20190408141839) do
   end
 
   add_foreign_key "cliente_contactos", "clientes"
+  add_foreign_key "detalle_usuarios", "users"
   add_foreign_key "solicitud_estructuras", "solicituds"
   add_foreign_key "solicitud_servicios", "solicituds"
   add_foreign_key "solicitud_tanques", "solicituds"

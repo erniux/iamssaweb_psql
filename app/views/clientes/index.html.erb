@@ -26,7 +26,7 @@
         <td><%= cliente.telefono_oficina %></td>
         <td><%= cliente.correo %></td>
         <td><%= link_to 'Mostrar', cliente %></td>
-        <td><%= link_to "Modificar", edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Modificar', edit_cliente_path(cliente) %></td>
         <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: '¿Confirma eliminar el Registro?' } %></td>
       
     <% end %>

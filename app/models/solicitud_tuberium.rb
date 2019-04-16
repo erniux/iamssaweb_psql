@@ -1,3 +1,3 @@
 class SolicitudTuberium < ApplicationRecord
-  belongs_to :solicitud
+  belongs_to :solicituds
 end

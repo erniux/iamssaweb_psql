@@ -1,3 +1,3 @@
 class SolicitudTanque < ApplicationRecord
-	belongs_to :solicitud
+	belongs_to :solicituds
 end

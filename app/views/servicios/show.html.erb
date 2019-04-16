@@ -1,0 +1,50 @@
+<div class="container">
+<div class="row">
+  <div class="col-md-12">
+      <strong>Concepto:</strong>
+      <%= @servicio.concepto %>
+    </div>
+  </div><br>
+
+  <div class="row">
+    <div class="col-md-2">
+      <strong>Tipo Servicio:</strong>
+      <%= @servicio.tipo_servicio %>
+    </div>
+    <div class="col-md-2">
+      <strong>Cantidad:</strong>
+      <%= @servicio.cantidad %>
+    </div>
+    <div class="col-md-2">
+      <strong>Precio a:</strong>
+      <%= @servicio.precio_a %>
+    </div>
+
+    <div class="col-md-2">
+      <strong>Precio b:</strong>
+      <%= @servicio.precio_b %>
+    </div>
+    <div class="col-md-2">    
+      <strong>Precio c:</strong>
+      <%= @servicio.precio_c %>
+    </div>
+    <div class="col-md-2">
+      <strong>Entidad:</strong>
+      <%= @servicio.entidad %>
+    </div>
+  </div><br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <strong>Material:</strong>
+      <%= @servicio.material %>
+    </div>
+  </div><br>
+  <div class="row">
+  <div class="col-md-12">
+    <%= link_to 'Modificar', edit_servicio_path(@servicio) %> |
+    <%= link_to 'Regresar', servicios_path %>
+</div>
+</div>
+</div><br>
+

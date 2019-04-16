@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  concepto: MyText
+  cantidad: 1.5
+  precio_a: 1.5
+  precio_b: 1.5
+  precio_c: 1.5
+  entidad: MyString
+  material: MyString
+
+two:
+  concepto: MyText
+  cantidad: 1.5
+  precio_a: 1.5
+  precio_b: 1.5
+  precio_c: 1.5
+  entidad: MyString
+  material: MyString

@@ -1,0 +1,36 @@
+<%= simple_form_for(@servicio) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <div class="row">
+      <%= f.input :concepto, label: 'Concepto' %>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+         <%= f.input :tipo_servicio, label: 'Tipo Servicio' %>
+       </div>
+      <div class="col-md-2">
+         <%= f.input :cantidad, label: 'Cantidad' %>
+      </div>
+      <div class="col-md-2">
+         <%= f.input :precio_a, label: 'Precio A' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :precio_b, label: 'Precio B' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :precio_c, label: 'Precio C' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :entidad, label: 'Entidad' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :material, label: 'Material' %>
+       </div>
+     </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, 'Guardar Registro' %>
+  </div>
+<% end %>

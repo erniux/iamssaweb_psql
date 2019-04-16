@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Personal</h1>
+<%= link_to 'Crear Nuevo Empleado', new_empleado_path, class: "btn btn-info" %>
+<%= link_to 'Regresar a Catálogos', catalogos_path, class: "btn btn-success" %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nocredencial</th>
+      <th>Nombre</th>
+      <th>Iniciales</th>
+      <th>Direccion</th>
+      <th>Cp</th>
+      <th>Telefono</th>
+      <th>Celular</th>
+      <th>Contratacion</th>
+      <th>Puesto</th>
+      <th>Depto</th>
+      <th>Rfc</th>
+      <th>Curp</th>
+      <th>Activo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empleados.each do |empleado| %>
+      <tr>
+        <td><%= empleado.NoCredencial %></td>
+        <td><%= empleado.Nombre %></td>
+        <td><%= empleado.Iniciales %></td>
+        <td><%= empleado.Direccion %></td>
+        <td><%= empleado.CP %></td>
+        <td><%= empleado.Telefono %></td>
+        <td><%= empleado.Celular %></td>
+        <td><%= empleado.Contratacion %></td>
+        <td><%= empleado.Puesto %></td>
+        <td><%= empleado.Depto %></td>
+        <td><%= empleado.RFC %></td>
+        <td><%= empleado.CURP %></td>
+        <td><%= empleado.Activo %></td>
+        <td><%= link_to 'Mostrar', empleado %></td>
+        <td><%= link_to 'Modificar', edit_empleado_path(empleado) %></td>
+        <td><%= link_to 'Eliminar', empleado, method: :delete, data: { confirm: '¿Confirma eliminar el Registro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

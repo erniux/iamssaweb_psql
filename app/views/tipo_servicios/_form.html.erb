@@ -1,0 +1,12 @@
+<%= simple_form_for(@tipo_servicio) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :cve_tipo_servicio %>
+    <%= f.input :detalle_servicio %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,81 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  NoCredencial: 1
+  Nombre: MyString
+  Iniciales: MyString
+  Direccion: MyString
+  Colonia: MyString
+  Poblacion: MyString
+  Estado: MyString
+  CP: MyString
+  Telefono: MyString
+  Celular: MyString
+  Nextel: MyString
+  Radio: MyString
+  Nacimiento: 2019-04-10 19:49:40
+  Contratacion: 2019-04-10 19:49:40
+  Puesto: MyString
+  Depto: MyString
+  IdEntidad: 1
+  RFC: MyString
+  CURP: MyString
+  IMSS: MyString
+  Licencia: MyString
+  Tipo: MyString
+  Exped: 2019-04-10 19:49:40
+  Venc: 2019-04-10 19:49:40
+  Licencia2: MyString
+  Tipo2: MyString
+  Exped2: 2019-04-10 19:49:40
+  Venc2: 2019-04-10 19:49:40
+  RazonSocial: MyString
+  Examinador: MyString
+  Ocupacion: MyString
+  Cedula: MyString
+  Registro: MyString
+  Agudeza: MyString
+  Jaeger: false
+  Colores: false
+  Grises: false
+  UltExa: MyString
+
+two:
+  NoCredencial: 1
+  Nombre: MyString
+  Iniciales: MyString
+  Direccion: MyString
+  Colonia: MyString
+  Poblacion: MyString
+  Estado: MyString
+  CP: MyString
+  Telefono: MyString
+  Celular: MyString
+  Nextel: MyString
+  Radio: MyString
+  Nacimiento: 2019-04-10 19:49:40
+  Contratacion: 2019-04-10 19:49:40
+  Puesto: MyString
+  Depto: MyString
+  IdEntidad: 1
+  RFC: MyString
+  CURP: MyString
+  IMSS: MyString
+  Licencia: MyString
+  Tipo: MyString
+  Exped: 2019-04-10 19:49:40
+  Venc: 2019-04-10 19:49:40
+  Licencia2: MyString
+  Tipo2: MyString
+  Exped2: 2019-04-10 19:49:40
+  Venc2: 2019-04-10 19:49:40
+  RazonSocial: MyString
+  Examinador: MyString
+  Ocupacion: MyString
+  Cedula: MyString
+  Registro: MyString
+  Agudeza: MyString
+  Jaeger: false
+  Colores: false
+  Grises: false
+  UltExa: MyString

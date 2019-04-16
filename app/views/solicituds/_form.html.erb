@@ -2,98 +2,270 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :proyecto %>
-    <%= f.input :estatus, collection: ['Emitida', 'Cotizada', 'Cancelada']  %>
-    <%= f.input :comentarios %>
-    <%= f.association :user %>
-    <%= f.association :cliente, label_method: :nombre_comercial, value_method: :id, include_blank: false %>
-    <%= f.association :cliente_contacto, label_method: :nombre,  value_method: :id, include_blank: false %>
+    <div class="col-md-6">
+      <%= f.input :proyecto, label: 'Proyecto' %>
+    </div>
+    <div class="col-md-6">
+      <%= f.input :estatus, collection: ['Emitida', 'Cotizada', 'Cancelada']  %>
+    </div>
+    <div class="col-md-12">
+      <%= f.input :comentarios %>
+    </div>
+    <div class="col-md-6">
+      <%= f.association :cliente, label_method: :nombre_comercial, value_method: :id, include_blank: true %>
+    </div>
+    <div id="cliente_contacto" class="col-md-6">
+        <%= f.association :cliente_contacto, label_method: :nombre, value_method: :id, include_blank: true, label: 'Contacto' %>
+    </div>
   </div>
+  <br>
 
-  <strong>SERVICIO</strong>
-   <div>
-      <%= f.simple_fields_for :solicitud_servicio do |servicio| %>
-         <%= servicio.input :torque %>
-         <%= servicio.input :vacio %>
-         <%= servicio.input :iris %>
-         <%= servicio.input :prueba_doblez %>
-         <%= servicio.input :prueba_pintura %>
-         <%= servicio.input :doblez %>
-         <%= servicio.input :radiografia %>
-         <%= servicio.input :inspeccion_visual %>
-         <%= servicio.input :ultrasonido %>
-         <%= servicio.input :liquido_penetrante %>
-         <%= servicio.input :part_magneticas %>
-         <%= servicio.input :supervicion %>
-         <%= servicio.input :calif_soldador %>
-         <%= servicio.input :calif_procedimiento %>
-         <%= servicio.input :elab_procedimiento %>
-         <%= servicio.input :emision_procedimiento %>
-      <% end %>
-    </div>
+  <!-- pestañas -->
+
+
   
-  <strong>ESTRUCTURA</strong>
-  <div>
-      <%= f.simple_fields_for :solicitud_estructura do |estructura| %>
-         <%= estructura.input :estructura %>
-         <%= estructura.input :columna_pr %>
-         <%= estructura.input :columna_hss_o_cajon %>
-         <%= estructura.input :columna_ptr_o_monten %>
-         <%= estructura.input :trabes_pr %>
-         <%= estructura.input :trabes_ps %>
-         <%= estructura.input :trabes_angulo_con_ptr %>
-         <%= estructura.input :angulo_con_angulo %>
-         <%= estructura.input :ptr_con_ptr %>
-         <%= estructura.input :union_filete %>
-         <%= estructura.input :union_a_tope %>
-         <%= estructura.input :espesor_columna %>
-         <%= estructura.input :espesor_trabe %>
-         <%= estructura.input :tiempo_fabricacion_montaje %>
-         <%= estructura.input :toneladas %>
-      <% end %>
-   </div>
+  <!-- Fin pestañas -->
 
-    <strong>TUBERIA</strong>
-    <div>
-      <%= f.simple_fields_for :solicitud_tuberia do |tuberia| %>
-         <%= tuberia.input :tuberia %>
-         <%= tuberia.input :tanque %>
-         <%= tuberia.input :recipiente_a_presion %>
-         <%= tuberia.input :espesor_cuerpo %>
-         <%= tuberia.input :espesor_tapa %>
-         <%= tuberia.input :espesor_diametro %>
-         <%= tuberia.input :espesor_capacidad %>
-         <%= tuberia.input :espesor_longitud_altura %>
-         <%= tuberia.input :no_sold_circunferencia %>
-         <%= tuberia.input :no_sold_longitud %>
-         <%= tuberia.input :codigo_evaluacion %>
-      <% end %>
+<div class="container">
+<hr>
+  <strong>SERVICIO</strong><hr>    
+      <div class="row">
+        <div class="col-md-2">
+          <%= f.input :servicio_calif_procedimiento, label:'Calificar Procedimiento'  %>
+        </div>
+        <div class="col-md-2">
+         <%= f.input :servicio_calif_soldador, label: 'Calificar Soldador' %>
+        </div>
+        <div class="col-md-2">
+         <%= f.input :servicio_doblez, label: 'Doblez' %>
+        </div>
+        <div class="col-md-2">
+         <%= f.input :servicio_elab_procedimiento, label:'Elaborar Procedimiento' %>
+        </div>
+        <div class="col-md-2">
+         <%= f.input :servicio_emision_procedimiento, label: 'Emitir Procedimiento' %>
+        </div>
+        <div class="col-md-2">
+         <%= f.input :servicio_inspeccion_visual, label: 'Inspección Visual' %>
+        </div>
+     </div>
+     <div class="row">
+      <div class="col-md-2">
+         <%= f.input :servicio_iris, label: 'Iris' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :servicio_liquido_penetrante, label: 'Líquido Penetrante' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :servicio_part_magneticas, label: 'Partículas Magnéticas' %>
+       </div>
+         <div class="col-md-2">
+         <%= f.input :servicio_prueba_doblez, label: 'Prueba Doblez' %>
+       </div>
+         <div class="col-md-2">
+         <%= f.input :servicio_prueba_pintura, label: 'Prueba Pintura' %>
+       </div>
+         <div class="col-md-2">
+         <%= f.input :servicio_radiografia, label: 'Radiografia' %>
+       </div>
+     </div>
+     <div class="row">
+      <div class="col-md-2">
+         <%= f.input :servicio_supervicion, label: 'Supervición' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :servicio_torque, label: 'Torque' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :servicio_ultrasonido, label: 'Ultrasonido' %>
+       </div>
+       <div class="col-md-2">
+         <%= f.input :servicio_vacio, label: 'Vacio' %>
+       </div>
+     </div><hr>
+
+     <strong>TUBERIA</strong><hr>
+     <div class="row">
+      <div class="col-sm-2">
+        <%= f.input :tuberia_altura, label: 'Altura' %>
+      </div>
+      <div class="col-sm-3">
+        <%= f.input_field :tuberia_altura_valor %>
+      </div>
+      <div class="col-sm-2">
+        <%= f.label :'Código Evaluación' %>
+      </div>
+      <div class="col-sm-4">
+        <%= f.input_field :tuberia_codigo_evaluacion, label: 'Código Evaluación' %>
+      </div>
     </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <p>DIAMETRO</p>
+        <%= f.label :'hasta_2 1/2" ' %>
+        <%= f.label :'3" a 8" '  %>
+        <%= f.label :'10" a 14"' %>
+        <%= f.label :'16" a 20"' %>
+        <%= f.label :'24" a 26"' %>
+        <%= f.label :'30" a 32"' %>
+        <%= f.label :'34" a 36"' %>
+        <%= f.label :'38" a 42"' %>
+        <%= f.label :'44" a 48"' %>
+      </div>
+      <div class="col-sm-3">
+        <p>UNIONES</p>
+     <%= f.input_field :tuberia_uniones_hasta_2_y_medio %>
+     <%= f.input_field :tuberia_uniones_3_a_8 %>
+     <%= f.input_field :tuberia_uniones_10_a_14 %>
+     <%= f.input_field :tuberia_uniones_16_a_20 %>
+     <%= f.input_field :tuberia_uniones_24_a_26 %>
+     <%= f.input_field :tuberia_uniones_30_a_32 %>
+     <%= f.input_field :tuberia_uniones_34_a_36 %>
+     <%= f.input_field :tuberia_uniones_38_a_42 %>
+     <%= f.input_field :tuberia_uniones_44_a_48 %>
+   </div>
+   <div class="col-sm-3">
+    <p>CEDULA</p>
+     <%= f.input_field :tuberia_cedula_hasta_2_y_medio %>
+     <%= f.input_field :tuberia_cedula_3_a_8 %>
+     <%= f.input_field :tuberia_cedula_10_a_14 %>
+     <%= f.input_field :tuberia_cedula_16_a_20 %>
+     <%= f.input_field :tuberia_cedula_24_a_26 %>
+     <%= f.input_field :tuberia_cedula_30_a_32 %>
+     <%= f.input_field :tuberia_cedula_34_a_36 %>
+     <%= f.input_field :tuberia_cedula_38_a_42 %>
+     <%= f.input_field :tuberia_cedula_44_a_48 %>
+   </div>
+</div>
+ 
+
+       
+       <hr>
+  
+  <strong>ESTRUCTURA</strong><hr>
+      <div class="row">
+        <div class="col-sm-2">
+          ELEMENTOS
+        </div>
+        <div class="col-md-2">
+          COLUMNA
+        </div>
+          <div class="col-md-2">
+            <%= f.input :estructura_columna_pr, label: 'PR' %>
+          </div>
+          <div class="col-md-2">
+            <%= f.input :estructura_columna_hss_o_cajon, label: 'HSS o Cajón' %>
+          </div>
+          <div class="col-md-2">
+            <%= f.input :estructura_columna_ptr_o_monten, label: 'PTR o Monten' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2">
+          </div>
+        <div class="col-md-2">
+          TRABES
+        </div>
+          <div class="col-md-2">
+            <%= f.input :estructura_trabes_pr, label: 'PR' %>
+          </div>
+          <div class="col-md-2">
+            <%= f.input :estructura_trabes_ps, label: 'PS' %>
+          </div>
+          <div class="col-md-2">
+            <%= f.input :estructura_trabes_angulo_con_ptr, label: 'Angulo/PTR' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-2">
+          </div>
+          <div class="col-md-3">
+            <%= f.input :estructura_angulo_con_angulo, label: 'Angulo con Angulo' %>
+          </div>
+          <div class="col-md-3">
+            <%= f.input :estructura_ptr_con_ptr, label: 'PTR con PTR' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            TIPO DE UNIONES
+          </div>
+          <div class="col-md-2"></div>
+         <div class="col-md-3">
+          <%= f.input :estructura_union_filete, label: 'Union Filete' %>
+        </div>
+        <div class="col-md-3">
+          <%= f.input :estructura_union_a_tope, label: 'Union a Tope' %>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-2">
+            ESPESORES
+          </div>
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
+            <%= f.input :estructura_espesor_columna , label: 'Columna' %>
+          </div>
+          <div class="col-md-3">
+            <%= f.input :estructura_espesor_trabe, label: 'Trabe' %>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2"></div>
+          <div class="col-md-2"></div>
+          <div class="col-md-3">
+            <%= f.input :estructura_tiempo_fabricacion_montaje, label: 'Tiempo Fabricacion Montaje' %>
+          </div>
+          <div class="col-md-3">
+            <%= f.input :estructura_toneladas, label: 'Toneladas' %>
+          </div>
+      </div><hr>
+
     
-    <strong>TANQUE</strong>
-    <div>
-      <%= f.simple_fields_for :solicitud_tanque do |tanque| %>
-         <%= tanque.input :tanque %>
-         <%= tanque.input :recipiente_a_presion %>
-         <%= tanque.input :espesor_cuerpo %>
-         <%= tanque.input :espesor_tapa %>
-         <%= tanque.input :espesor_diametro %>
-         <%= tanque.input :espesor_capacidad %>
-         <%= tanque.input :espesor_longitud_altura %>
-         <%= tanque.input :no_sold_circunferencia %>
-         <%= tanque.input :no_sold_longitud %>
-         <%= tanque.input :codigo_evaluacion %>
-      <% end %>
+    
+    <strong>TANQUE</strong><hr>
+      <div class="row">
+         <div class="col-md-2">
+          <%= f.input :tanque_recipiente_a_presion, label: '¿Recipiente a Presión?' %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2">
+          ESPESORES
+        </div>
+         <div class="col-md-2">
+          <%= f.input :tanque_espesor_cuerpo, label: 'CUERPO' %>
+        </div>
+         <div class="col-md-2">
+          <%= f.input :tanque_espesor_tapa, label: 'TAPA' %>
+        </div>
+         <div class="col-md-2">
+          <%= f.input :tanque_espesor_diametro, label: 'DIAMETRO' %>
+        </div>
+         <div class="col-md-2">
+          <%= f.input :tanque_espesor_capacidad, label: 'CAPACIDAD' %>
+        </div>
+         <div class="col-md-2">
+          <%= f.input :tanque_espesor_longitud_altura, label: 'LONGITUD ALTURA' %>
+        </div>
+      </div>
+      <div class="row">
+         <div class="col-md-2"></div>
+          <div class="col-md-3">
+          <%= f.input :tanque_no_sold_circunferencia, label: 'No. Soldaduras Circunferencia' %>
+        </div>
+         <div class="col-md-3">
+          <%= f.input :tanque_no_sold_longitud, label: 'No. Soldaduras Longitud' %>
+        </div>
+         <div class="col-md-3">
+          <%= f.input :tanque_codigo_evaluacion, label: 'CODIGO EVALUACIÓN' %>
+        </div>
     </div>
+  </div><hr>
 
   <div class="form-actions">
     <%= f.button :submit, "Guardar Registro" %>
   </div>
 <% end %>
-
-
-
-    
-
-
-    

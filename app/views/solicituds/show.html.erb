@@ -13,16 +13,16 @@
       <%= @solicitud.user.name %><br>
     </p>
     <strong>SERVICIOS</strong>
-    <%= @solicitud.solicitud_servicio.inspect %><br>
+    
 
     <strong>ESTRUCTURAS</strong>
-    <%= @solicitud.solicitud_estructura.inspect %><br>
+    
 
     <strong>TANQUES</strong>
-    <%= @solicitud.solicitud_tanque.inspect %><br>
+    
 
     <strong>TUBERIAS</strong>
-    <%= @solicitud.solicitud_tuberium.inspect %><br>
+    
 
     <%= link_to 'Editar', edit_solicitud_path(@solicitud), class: 'card-link' %> |
     <%= link_to 'Regresar', solicituds_path, class: 'card-link' %>

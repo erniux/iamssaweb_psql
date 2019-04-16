@@ -2,6 +2,7 @@ class SolicitudsController < ApplicationController
   before_action :set_solicitud, only: [:show, :edit, :update, :destroy]
   access user: :all, site_admin: :all
 
+
   # GET /solicituds
   def index
     @solicituds = Solicitud.all
@@ -15,11 +16,12 @@ class SolicitudsController < ApplicationController
     @solicitud = Solicitud.new
   end
 
+
   def edit
   end
 
   def create
-    @solicitud = Solicitud.new(solicitud_params)
+    @solicitud = current_user.solicituds.new(solicitud_params)
 
     if @solicitud.save
       redirect_to @solicitud, notice: 'Solicitud was successfully created.'
@@ -49,19 +51,21 @@ class SolicitudsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def solicitud_params
-      params.require(:solicitud).permit(:proyecto, :estatus, :comentarios, :user_id, :cliente_id, :cliente_contacto_id,
-        solicitud_estructura_attributes: [:id, :estructura, :columna_pr, :columna_hss_o_cajon, :columna_ptr_o_monten, :trabes_pr, 
-                                          :trabes_ps, :trabes_angulo_con_ptr, :angulo_con_angulo, :ptr_con_ptr, :union_filete, 
-                                          :union_a_tope, :espesor_columna, :espesor_trabe, :tiempo_fabricacion_montaje, 
-                                          :toneladas],
-        solicitud_tuberium_attributes:   [:id, :piso, :altura, :piso, :codigo_evaluacion, :diametro, :no_uniones, :cve_cedula],  
-        solicitud_tanque_attibutes:      [:id, :tanque, :recipiente_a_presion, :espesor_cuerpo, :espesor_tapa, :espesor_diametro, 
-                                          :espesor_capacidad, :espesor_longitud_altura, :no_sold_circunferencia, :no_sold_longitud, 
-                                          :codigo_evaluacion], 
-        solicitud_servicio_attributes:   [:id, :servicio, :columna_pr, :torque, :vacio, :iris, :prueba_doblez, :prueba_pintura, 
-                                          :doblez, :radiografia, :inspeccion_visual, :ultrasonido, :liquido_penetrante, 
-                                          :part_magneticas, :supervicion, :calif_soldador, :calif_procedimiento, 
-                                          :elab_procedimiento, :emision_procedimiento])
+      params.require(:solicitud).permit(:proyecto, :estatus, :comentarios, :user_id, :cliente_id, :cliente_contacto_id, 
+        :estructura_columna_pr, :estructura_columna_hss_o_cajon, :estructura_columna_ptr_o_monten, :estructura_trabes_pr, 
+        :estructura_trabes_ps, :estructura_trabes_angulo_con_ptr, :estructura_angulo_con_angulo, :estructura_ptr_con_ptr, 
+        :estructura_union_filete, :estructura_union_a_tope, :estructura_espesor_columna, :estructura_espesor_trabe, 
+        :estructura_tiempo_fabricacion_montaje, :estructura_toneladas, :servicio_torque, :servicio_vacio, :servicio_iris, 
+        :servicio_prueba_doblez, :servicio_prueba_pintura, :servicio_doblez, :servicio_radiografia, :servicio_inspeccion_visual, 
+        :servicio_ultrasonido, :servicio_liquido_penetrante, :servicio_part_magneticas, :servicio_supervicion, 
+        :servicio_calif_soldador, :servicio_calif_procedimiento, :servicio_elab_procedimiento, :servicio_emision_procedimiento, 
+        :tanque_recipiente_a_presion, :tanque_espesor_cuerpo, :tanque_espesor_tapa, :tanque_espesor_diametro, 
+        :tanque_espesor_capacidad, :tanque_espesor_longitud_altura, :tanque_no_sold_circunferencia, :tanque_no_sold_longitud, 
+        :tanque_codigo_evaluacion, :tuberia_altura, :tuberia_altura_valor, :tuberia_uniones_hasta_2_y_medio, :tuberia_uniones_3_a_8, 
+        :tuberia_uniones_10_a_14, :tuberia_uniones_16_a_20, :tuberia_uniones_24_a_26, :tuberia_uniones_30_a_32, :tuberia_uniones_34_a_36, 
+        :tuberia_uniones_38_a_42, :tuberia_uniones_44_a_48, :tuberia_cedula_hasta_2_y_medio, :tuberia_cedula_3_a_8, :tuberia_cedula_10_a_14, 
+        :tuberia_cedula_16_a_20, :tuberia_cedula_24_a_26, :tuberia_cedula_30_a_32, :tuberia_cedula_34_a_36, :tuberia_cedula_38_a_42, 
+        :tuberia_cedula_44_a_48)
     end
 end
 

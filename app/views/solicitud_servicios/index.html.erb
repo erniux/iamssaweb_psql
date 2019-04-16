@@ -14,8 +14,24 @@
   <tbody>
     <% @solicitud_servicios.each do |solicitud_servicio| %>
       <tr>
-        <td><%= solicitud_servicio.id_servicio %></td>
-        <td><%= solicitud_servicio.id_solicitud %></td>
+        <td><%= solicitud_servicio.solicitud_id %></td>
+        <td><%= solicitud_servicio.torque %></td>
+        <td><%= solicitud_servicio.vacio %></td>
+        <td><%= solicitud_servicio.iris %></td>
+        <td><%= solicitud_servicio.prueba_doblez %></td>
+        <td><%= solicitud_servicio.prueba_pintura %></td>
+        <td><%= solicitud_servicio.doblez %></td>
+        <td><%= solicitud_servicio.radiografia %></td>
+        <td><%= solicitud_servicio.inspeccion_visual %></td>
+        <td><%= solicitud_servicio.ultrasonido %></td>
+        <td><%= solicitud_servicio.liquido_penetrante %></td>
+        <td><%= solicitud_servicio.part_magneticas %></td>
+        <td><%= solicitud_servicio.supervicion %></td>
+        <td><%= solicitud_servicio.calif_soldador %></td>
+        <td><%= solicitud_servicio.calif_procedimiento %></td>
+        <td><%= solicitud_servicio.elab_procedimiento %></td>
+        <td><%= solicitud_servicio.emision_procedimiento %></td>
+        
         <td><%= link_to 'Show', solicitud_servicio %></td>
         <td><%= link_to 'Edit', edit_solicitud_servicio_path(solicitud_servicio) %></td>
         <td><%= link_to 'Destroy', solicitud_servicio, method: :delete, data: { confirm: 'Are you sure?' } %></td>

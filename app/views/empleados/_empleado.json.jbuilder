@@ -1,0 +1,2 @@
+json.extract! empleado, :id, :NoCredencial, :Nombre, :Iniciales, :Direccion, :Colonia, :Poblacion, :Estado, :CP, :Telefono, :Celular, :Nextel, :Radio, :Nacimiento, :Contratacion, :Puesto, :Depto, :IdEntidad, :RFC, :CURP, :IMSS, :Licencia, :Tipo, :Exped, :Venc, :Licencia2, :Tipo2, :Exped2, :Venc2, :RazonSocial, :Examinador, :Ocupacion, :Cedula, :Registro, :Agudeza, :Jaeger, :Colores, :Grises, :UltExa, :created_at, :updated_at
+json.url empleado_url(empleado, format: :json)
