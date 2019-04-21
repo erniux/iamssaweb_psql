@@ -1,0 +1,85 @@
+<h4>ESTRUCTURAS</h4>
+<% if @solicitud.estructura_columna_pr == true %>
+  <div class="col-md-4">
+    <em>Columna PR </em><%= check_box_tag 'columna_pr', @solicitud.estructura_columna_pr, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_columna_hss_o_cajon == true %>
+  <div class="col-md-4">
+    <em>Columna HSS o CAJON </em><%= check_box_tag 'columna_hss_cajon', @solicitud.estructura_columna_hss_o_cajon, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_columna_ptr_o_monten == true %>
+  <div class="col-md-4">
+    <em>Columna PTR o MONTEN </em><%= check_box_tag 'columna_ptr_monten', @solicitud.estructura_columna_ptr_o_monten, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_trabes_pr == true %>
+  <div class="col-md-4">
+    <em>Trabes PR </em><%= check_box_tag 'trabes_pr', @solicitud.estructura_trabes_pr, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_trabes_ps == true %>
+  <div class="col-md-4">
+    <em>Trabes PS </em><%= check_box_tag 'trabes_ps', @solicitud.estructura_trabes_ps, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_trabes_angulo_con_ptr == true %>
+  <div class="col-md-4">
+    <em>Trabes Angulo con PTR </em><%= check_box_tag 'trabes_angulo_ptr', @solicitud.estructura_trabes_angulo_con_ptr, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_angulo_con_angulo == true %>
+  <div class="col-md-3">
+    <em>Angulo con Angulo </em><%= check_box_tag 'angulo_con_angulo', @solicitud.estructura_angulo_con_angulo, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_ptr_con_ptr == true %>
+  <div class="col-md-3">
+    <em>PTR con PTR </em><%= check_box_tag 'ptr_con_ptr', @solicitud.estructura_ptr_con_ptr, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_union_filete == true %>
+  <div class="col-md-3">
+    <em>Unión Filete </em><%= check_box_tag 'union_filete', @solicitud.estructura_union_filete, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_union_a_tope == true %>
+  <div class="col-md-3">
+    <em>Unión a Tope </em><%= check_box_tag 'union_a_tope', @solicitud.estructura_union_a_tope, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_espesor_columna != nil %> 
+  <div class="col-md-3">
+     <em>Espesor Columna: </em> <%= @solicitud.estructura_espesor_columna %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_espesor_trabe != nil %>
+  <div class="col-md-3">
+    <em>Espesor Trabe: </em><%= @solicitud.estructura_espesor_trabe %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_tiempo_fabricacion_montaje != nil %>
+  <div class="col-md-3">
+    <em>Tiempo Fabricación Montaje: </em><%= @solicitud.estructura_tiempo_fabricacion_montaje %>
+  </div>
+<% end %>
+
+<% if @solicitud.estructura_toneladas != nil %>
+  <div class="col-md-3">
+    <em>Toneladas: </em><%= @solicitud.estructura_toneladas %>
+  </div>
+<% end %>
+

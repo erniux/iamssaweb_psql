@@ -1,0 +1,56 @@
+<h4>TANQUES</h4>
+
+<% if @solicitud.tanque_recipiente_a_presion == true %>
+  <div class="col-md-3">
+    <em>Recipiente a Presión </em><%= check_box_tag 'recipiente_presion', @solicitud.tanque_recipiente_a_presion, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_espesor_cuerpo != nil %>
+  <div class="col-md-2">
+    <em>Espesor Cuerpo: </em><%= @solicitud.tanque_espesor_cuerpo %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_espesor_tapa != nil %>
+  <div class="col-md-2">
+    <em>Espesor Tapa: </em><%= @solicitud.tanque_espesor_tapa %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_espesor_diametro != nil %>
+  <div class="col-md-2">
+    <em>Espesor Diametro: </em><%= @solicitud.tanque_espesor_diametro %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_espesor_capacidad != nil %>
+  <div class="col-md-3">
+    <em>Espesor Capacidad: </em><%= @solicitud.tanque_espesor_capacidad %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_espesor_longitud_altura != nil %>
+  <div class="col-md-3">
+    <em>Espesor Altura: </em><%= @solicitud.tanque_espesor_longitud_altura %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_no_sold_circunferencia != nil %>
+  <div class="col-md-4">
+    <em>No. Sold. Circunferencia: </em><%= @solicitud.tanque_no_sold_circunferencia %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_no_sold_longitud != nil %>
+  <div class="col-md-4">
+    <em>No. Sold. Longitud: </em><%= @solicitud.tanque_no_sold_longitud %>
+  </div>
+<% end %>
+
+<% if @solicitud.tanque_codigo_evaluacion != nil %>
+  <div class="col-md-4">
+    <em>Código de Evaluación: </em><%= @solicitud.tanque_codigo_evaluacion %>
+  </div>
+<% end %>
+

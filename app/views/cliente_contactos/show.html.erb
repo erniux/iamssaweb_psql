@@ -36,9 +36,9 @@
 </p>
 
 <p>
-  <strong>Clientes:</strong>
-  <%= @cliente_contacto.cliente %>
+  <strong>Cliente:</strong>
+  <%= @cliente_contacto.cliente.nombre_comercial %>
 </p>
 
-<%= link_to 'Edit', edit_cliente_contacto_path(@cliente_contacto) %> |
-<%= link_to 'Back', cliente_contactos_path %>
+<%= link_to 'Actualizar', edit_cliente_contacto_path(@cliente_contacto) %> |
+<%= link_to 'Regresar', cliente_contactos_path %>

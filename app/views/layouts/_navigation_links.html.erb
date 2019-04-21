@@ -1,4 +1,5 @@
 <ul class="nav navbar-nav">
+<%= link_to ' Inicio', root_path, class: 'navbar-brand glyphicon glyphicon-home' if logged_in?(:site_admin, :user) %>	
 <%= link_to ' Calendario', visitors_path, class: 'navbar-brand glyphicon glyphicon-calendar' if logged_in?(:site_admin, :user) %>
 <%= link_to ' Solicitudes', solicituds_path, class: 'navbar-brand glyphicon glyphicon-file' if logged_in?(:site_admin, :user) %>
 <%= link_to ' Cotizaciones', root_path, class: 'navbar-brand glyphicon glyphicon-tasks ' if logged_in?(:site_admin, :user) %>

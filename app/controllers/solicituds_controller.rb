@@ -2,8 +2,6 @@ class SolicitudsController < ApplicationController
   before_action :set_solicitud, only: [:show, :edit, :update, :destroy]
   access user: :all, site_admin: :all
 
-
-  # GET /solicituds
   def index
     @solicituds = Solicitud.all
 
@@ -16,15 +14,24 @@ class SolicitudsController < ApplicationController
     @solicitud = Solicitud.new
   end
 
+  def get_drop_down_options
+    val = params[:cliente_id]
+    #Use val to find records
+    options = ClienteContacto.collect{|x| "'#{x.id}' : '#{x.label}'"}    
+    render :text => "{#{options.join(",")}}" 
+    puts "HOLA", options.inspect
+  end
+
 
   def edit
   end
 
   def create
     @solicitud = current_user.solicituds.new(solicitud_params)
+    @conacto = ClienteContacto.find_by(id: params[:cliente_id])
 
     if @solicitud.save
-      redirect_to @solicitud, notice: 'Solicitud was successfully created.'
+      redirect_to @solicitud, notice: 'Registro creado correctamente.'
     else
       render :new
     end
@@ -32,7 +39,7 @@ class SolicitudsController < ApplicationController
 
   def update
     if @solicitud.update(solicitud_params)
-      redirect_to @solicitud, notice: 'Solicitud was successfully updated.'
+      redirect_to @solicitud, notice: 'Registro actualizado correctamente.'
     else
       render :edit
     end
@@ -40,7 +47,7 @@ class SolicitudsController < ApplicationController
 
   def destroy
     @solicitud.destroy
-    redirect_to solicituds_url, notice: 'Solicitud was successfully destroyed.'
+    redirect_to solicituds_url, notice: 'Registro eliminado correctamente.'
   end
 
   private
@@ -65,7 +72,7 @@ class SolicitudsController < ApplicationController
         :tuberia_uniones_10_a_14, :tuberia_uniones_16_a_20, :tuberia_uniones_24_a_26, :tuberia_uniones_30_a_32, :tuberia_uniones_34_a_36, 
         :tuberia_uniones_38_a_42, :tuberia_uniones_44_a_48, :tuberia_cedula_hasta_2_y_medio, :tuberia_cedula_3_a_8, :tuberia_cedula_10_a_14, 
         :tuberia_cedula_16_a_20, :tuberia_cedula_24_a_26, :tuberia_cedula_30_a_32, :tuberia_cedula_34_a_36, :tuberia_cedula_38_a_42, 
-        :tuberia_cedula_44_a_48)
+        :tuberia_cedula_44_a_48, :tuberia_codigo_evaluacion, :nombre_contacto, :telefono_directo, :correo, :puesto, :departamento)
     end
 end
 

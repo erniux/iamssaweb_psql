@@ -1,0 +1,97 @@
+<h4>SERVICIOS</h4>
+<% if @solicitud.servicio_torque == true %>
+  <div class="col-md-2">
+    <em>Torque </em><%= check_box_tag 'Torque', @solicitud.servicio_torque, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_vacio == true %>
+  <div class="col-md-2">
+    <em>Vacio </em><%= check_box_tag 'Vacio', @solicitud.servicio_vacio, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+          
+<% if @solicitud.servicio_iris == true %>
+  <div class="col-md-2">
+    <em>Iris </em><%= check_box_tag 'Iris', @solicitud.servicio_iris, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_doblez == true %>
+  <div class="col-md-2">
+    <em>Doblez </em><%= check_box_tag 'Doblez', @solicitud.servicio_doblez, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_prueba_pintura == true %>
+	<div class="col-md-2">
+		<em>Prueba Pintura </em><%= check_box_tag 'Pintura', @solicitud.servicio_prueba_pintura, true, :disabled => 'disabled' %>
+	</div>
+<% end %>
+
+<% if @solicitud.servicio_prueba_pintura == true %>
+	<div class="col-md-2">
+		<em>Prueba Pintura </em><%= check_box_tag 'Pintura', @solicitud.servicio_prueba_pintura, true, :disabled => 'disabled' %>
+	</div>
+<% end %>
+
+<% if @solicitud.servicio_radiografia == true %>
+	<div class="col-md-2">
+		<em>Radiografía </em><%= check_box_tag 'Radiografia', @solicitud.servicio_radiografia, true, :disabled => 'disabled' %>
+	</div>
+<% end %>
+
+<% if @solicitud.servicio_inspeccion_visual == true %>
+	<div class="col-md-2">
+		<em>Inspección Visual </em><%= check_box_tag 'Inspeccion', @solicitud.servicio_inspeccion_visual, true, :disabled => 'disabled' %>
+</div>
+<% end %>
+
+<% if @solicitud.servicio_ultrasonido == true %>
+	<div class="col-md-2">
+		<em>Ultrasonido </em><%= check_box_tag 'Ultrasonido', @solicitud.servicio_ultrasonido, true, :disabled => 'disabled' %>
+	</div>
+<% end %>
+
+<% if @solicitud.servicio_liquido_penetrante == true %>
+  <div class="col-md-2">
+    <em>Líquido Penetrante </em><%= check_box_tag 'liquidos', @solicitud.servicio_liquido_penetrante, true, :disabled => 'disabled' %>
+	</div>
+<% end %>
+
+<% if @solicitud.servicio_part_magneticas == true %>
+  <div class="col-md-2">
+    <em>Part. Magnéticas </em><%= check_box_tag 'particulas', @solicitud.servicio_part_magneticas, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_supervicion == true %>
+  <div class="col-md-2">
+    <em>Supervisión </em><%= check_box_tag 'supervision', @solicitud.servicio_supervicion, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_calif_soldador == true %>
+  <div class="col-md-2">
+    <em>Calif. Soldador </em><%= check_box_tag 'soldador', @solicitud.servicio_calif_soldador, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_calif_procedimiento == true %>
+  <div class="col-md-2">
+    <em>Calif. Procedimiento </em><%= check_box_tag 'calif_procedimiento', @solicitud.servicio_calif_procedimiento, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_elab_procedimiento == true %>
+  <div class="col-md-2">
+    <em>Elab. Procedimiento </em><%= check_box_tag 'elab_procedimiento', @solicitud.servicio_elab_procedimiento, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+
+<% if @solicitud.servicio_emision_procedimiento == true %>
+  <div class="col-md-3">
+    <em>Emisión Procedimiento </em><%= check_box_tag 'emis_procedimiento', @solicitud.servicio_emision_procedimiento, true, :disabled => 'disabled' %>
+  </div>
+<% end %>
+          

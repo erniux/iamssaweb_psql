@@ -1,6 +1,7 @@
 class PaginasController < ApplicationController
   def Inicio
-
+  #	@solicitud = Solicitud.last(5)
+  	@solicitud = Solicitud.where(estatus: "Emitida")
   end
 
   def Contacto

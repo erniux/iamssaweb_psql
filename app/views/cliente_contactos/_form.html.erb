@@ -2,24 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nombre %>
-    <%= f.input :appaterno %>
-    <%= f.input :apmaterno %>
-    <%= f.input :telefono_directo %>
-    <%= f.input :correo %>
-    <%= f.input :puesto %>
-    <%= f.input :departamento %>
-    <%= f.association :cliente %>
+    <%= f.input :nombre, label: 'Nombre' %>
+    <%= f.input :appaterno, label: 'Apellido Paterno' %>
+    <%= f.input :apmaterno, label: 'Apellido Materno' %>
+    <%= f.input :telefono_directo, label: 'Teléfono Directo' %>
+    <%= f.input :correo, label: 'Correo' %>
+    <%= f.input :puesto, label: 'Puesto' %>
+    <%= f.input :departamento, label: 'Departamento' %>
+    <%= f.association :cliente, label_method: :nombre_comercial, value_method: :id, include_blank: true, label: 'Cliente' %>
   </div>
-
-  <div>
-    <% f.simple_fields_for :cliente_contactos |c| %>
-    .duplicatable_nested_form
-     <%= c.association :cliente %>
-     <%=  c.input :amount, :input_html => { min: 0 } %>
-
-
-    <% end %>
 
   <div class="form-actions">
     <%= f.button :submit %>

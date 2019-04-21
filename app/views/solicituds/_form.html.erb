@@ -8,26 +8,32 @@
     <div class="col-md-6">
       <%= f.input :estatus, collection: ['Emitida', 'Cotizada', 'Cancelada']  %>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-6">
       <%= f.input :comentarios %>
     </div>
     <div class="col-md-6">
       <%= f.association :cliente, label_method: :nombre_comercial, value_method: :id, include_blank: true %>
     </div>
-    <div id="cliente_contacto" class="col-md-6">
-        <%= f.association :cliente_contacto, label_method: :nombre, value_method: :id, include_blank: true, label: 'Contacto' %>
-    </div>
-  </div>
-  <br>
+    <p></p>
 
-  <!-- pestañas -->
-
+    <div class="row">
+      <div class="col-md-12">
+        <strong>SOLICITANTE</strong><hr>
+      </div>
+         
+     <div class="col-md-6">
+       <%= f.input :nombre_contacto, label: 'Nombre' %>
+       <%= f.input :telefono_directo, label: 'Teléfono' %>
+     </div>
+     <div class="col-md-6">      
+       <%= f.input :correo, label: 'Correo' %>
+       <%= f.input :departamento, label: 'Departamento' %>
+     </div>
+   </div>
 
   
-  <!-- Fin pestañas -->
-
 <div class="container">
-<hr>
+
   <strong>SERVICIO</strong><hr>    
       <div class="row">
         <div class="col-md-2">

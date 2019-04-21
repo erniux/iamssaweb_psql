@@ -1,31 +1,44 @@
-<div class="card" style="width: 45rem;">
+<div class="card">
   <div class="card-body">
-    <h5 class="card-title"><%= @solicitud.cliente.nombre_comercial %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= @solicitud.cliente_contacto.nombre %> </h6>
+    <h5 class="card-title">No. Solicitud: <%= @solicitud.id %></h5>
+    <%= link_to 'Editar', edit_solicitud_path(@solicitud), class: 'card-link' %> |
+    <%= link_to 'Regresar', solicituds_path, class: 'card-link' %> |
+    <%= link_to 'Imprimir', @solicitud, class: 'card-link' %>
+    <h6 class="card-subtitle mb-2 text-muted"><%= @solicitud.cliente.nombre_comercial %> </h6>
     <p class="card-text">
       <strong>Proyecto:</strong>
       <%= @solicitud.proyecto %><br>
       <strong>Estatus:</strong>
       <%= @solicitud.estatus %><br>
+      <strong>Contacto:</strong>
+      <%= @solicitud.nombre_contacto %><br>
       <strong>Comentarios:</strong>
       <%= @solicitud.comentarios %><br>
-      <strong>User:</strong>
+      <strong>Usuario:</strong>
       <%= @solicitud.user.name %><br>
+      
+      <div class="row">
+        <%= render 'shared/solicitud_servicio' %>
+      </div>
+      <div class="row">
+        <%= render 'shared/solicitud_tuberia' %>
+      </div>
+      <div class="row">
+        <%= render 'shared/solicitud_estructura' %>
+      </div>
+
+      <div class="row">
+        <%= render 'shared/solicitud_tanque' %>
+      </div>
     </p>
-    <strong>SERVICIOS</strong>
-    
-
-    <strong>ESTRUCTURAS</strong>
-    
-
-    <strong>TANQUES</strong>
-    
-
-    <strong>TUBERIAS</strong>
-    
-
-    <%= link_to 'Editar', edit_solicitud_path(@solicitud), class: 'card-link' %> |
-    <%= link_to 'Regresar', solicituds_path, class: 'card-link' %>
-
-    </div>
+  </div>
 </div>
+
+          
+
+          
+          
+      
+
+
+

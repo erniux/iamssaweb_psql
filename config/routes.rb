@@ -4,12 +4,9 @@ Rails.application.routes.draw do
   resources :empleados
   resources :solicituds
   resources :cliente_contactos
-  resources :solicitud_estructuras
-  resources :solicitud_tanques
-  resources :solicitud_tuberia
-  resources :solicitud_servicios
-  resources :contacto_clientes
   resources :clientes
+  resources :events
+  resources :visitors
 
   post 'solicitud/contacto', as: 'solicitud_contacto'
   
@@ -19,8 +16,7 @@ Rails.application.routes.draw do
   get 'catalogos', to: 'paginas#Catalogos'
 
   devise_for :users, path: '', path_names: { sign_in: 'ingresar', sign_out: 'salir', sing_up: 'registro'}
-  resources :events
-  resources :visitors
-
+  
   root 'paginas#Inicio'
+
 end

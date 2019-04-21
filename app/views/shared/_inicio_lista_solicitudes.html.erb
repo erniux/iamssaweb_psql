@@ -1,5 +1,4 @@
 <h1>Solicitudes</h1>
-<%= link_to 'Nueva Solicitud', new_solicitud_path, class: 'btn btn-info' %>
 
 <table class="table">
   <thead>
@@ -15,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @solicituds.each do |solicitud| %>
+    <% @solicitud.each do |solicitud| %>
       <tr>
         <td><%= solicitud.id %></td>
         <td><%= solicitud.cliente.nombre_comercial %></td>
@@ -31,5 +30,3 @@
 </table>
 
 <br>
-
-

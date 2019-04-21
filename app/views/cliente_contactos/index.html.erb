@@ -1,4 +1,5 @@
 <h1>Cliente Contactos</h1>
+<%= link_to 'Nuevo Contacto', new_cliente_contacto_path, class: 'btn btn-info' %>
 
 <table class="table">
   <thead>
@@ -10,7 +11,7 @@
       <th>Correo</th>
       <th>Puesto</th>
       <th>Departamento</th>
-      <th>Clientes</th>
+      <th>Cliente</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -25,15 +26,15 @@
         <td><%= cliente_contacto.correo %></td>
         <td><%= cliente_contacto.puesto %></td>
         <td><%= cliente_contacto.departamento %></td>
-        <td><%= cliente_contacto.cliente %></td>
-        <td><%= link_to 'Show', cliente_contacto %></td>
-        <td><%= link_to 'Edit', edit_cliente_contacto_path(cliente_contacto) %></td>
-        <td><%= link_to 'Destroy', cliente_contacto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= cliente_contacto.cliente.nombre_comercial %></td>
+        <td><%= link_to 'Consultar', cliente_contacto %></td>
+        <td><%= link_to 'Actualizar', edit_cliente_contacto_path(cliente_contacto) %></td>
+        <td><%= link_to 'Eliminar', cliente_contacto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
+       
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Cliente Contacto', new_cliente_contacto_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190415191211) do
+ActiveRecord::Schema.define(version: 20190421053958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -364,6 +364,11 @@ ActiveRecord::Schema.define(version: 20190415191211) do
     t.float    "tuberia_altura_valor"
     t.boolean  "tuberia_altura"
     t.string   "tuberia_codigo_evaluacion"
+    t.string   "nombre_contacto"
+    t.string   "telefono_directo"
+    t.string   "correo"
+    t.string   "puesto"
+    t.string   "departamento"
     t.index ["cliente_contacto_id"], name: "index_solicituds_on_cliente_contacto_id", using: :btree
     t.index ["cliente_id"], name: "index_solicituds_on_cliente_id", using: :btree
     t.index ["user_id"], name: "index_solicituds_on_user_id", using: :btree
