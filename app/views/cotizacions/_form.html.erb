@@ -1,0 +1,14 @@
+<%= simple_form_for(@cotizacion) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :num_cotizacion %>
+    <%= f.association :proyecto %>
+    <%= f.association :cliente %>
+    <%= f.association :solicitud %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

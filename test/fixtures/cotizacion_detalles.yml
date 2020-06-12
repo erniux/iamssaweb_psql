@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_partida: 1
+  cotizacion: one
+  servicio: one
+  tipo_servicio: one
+  cantidad: 1
+  precio: 1.5
+  observaciones: MyText
+
+two:
+  num_partida: 1
+  cotizacion: two
+  servicio: two
+  tipo_servicio: two
+  cantidad: 1
+  precio: 1.5
+  observaciones: MyText

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190421053958) do
+ActiveRecord::Schema.define(version: 20200612002939) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,33 @@ ActiveRecord::Schema.define(version: 20190421053958) do
     t.boolean  "cobro_sabado"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+  end
+
+  create_table "cotizacion_detalles", force: :cascade do |t|
+    t.integer  "num_partida"
+    t.integer  "cotizacion_id"
+    t.integer  "servicio_id"
+    t.integer  "tipo_servicio_id"
+    t.integer  "cantidad"
+    t.float    "precio"
+    t.text     "observaciones"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.index ["cotizacion_id"], name: "index_cotizacion_detalles_on_cotizacion_id", using: :btree
+    t.index ["servicio_id"], name: "index_cotizacion_detalles_on_servicio_id", using: :btree
+    t.index ["tipo_servicio_id"], name: "index_cotizacion_detalles_on_tipo_servicio_id", using: :btree
+  end
+
+  create_table "cotizacions", force: :cascade do |t|
+    t.string   "num_cotizacion"
+    t.integer  "proyecto_id"
+    t.integer  "cliente_id"
+    t.integer  "solicitud_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["cliente_id"], name: "index_cotizacions_on_cliente_id", using: :btree
+    t.index ["proyecto_id"], name: "index_cotizacions_on_proyecto_id", using: :btree
+    t.index ["solicitud_id"], name: "index_cotizacions_on_solicitud_id", using: :btree
   end
 
   create_table "detalle_usuarios", force: :cascade do |t|
@@ -200,6 +227,15 @@ ActiveRecord::Schema.define(version: 20190421053958) do
     t.text     "observaciones"
     t.datetime "start"
     t.datetime "end"
+  end
+
+  create_table "proyectos", force: :cascade do |t|
+    t.string   "nombre_proyecto"
+    t.string   "empresa"
+    t.string   "responsable"
+    t.text     "comentarios"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "servicios", force: :cascade do |t|
@@ -396,6 +432,12 @@ ActiveRecord::Schema.define(version: 20190421053958) do
   end
 
   add_foreign_key "cliente_contactos", "clientes"
+  add_foreign_key "cotizacion_detalles", "cotizacions"
+  add_foreign_key "cotizacion_detalles", "servicios"
+  add_foreign_key "cotizacion_detalles", "tipo_servicios"
+  add_foreign_key "cotizacions", "clientes"
+  add_foreign_key "cotizacions", "proyectos"
+  add_foreign_key "cotizacions", "solicituds"
   add_foreign_key "detalle_usuarios", "users"
   add_foreign_key "solicitud_estructuras", "solicituds"
   add_foreign_key "solicitud_servicios", "solicituds"

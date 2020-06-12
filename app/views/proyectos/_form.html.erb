@@ -1,0 +1,14 @@
+<%= simple_form_for(@proyecto) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre_proyecto %>
+    <%= f.input :empresa %>
+    <%= f.input :responsable %>
+    <%= f.input :comentarios %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

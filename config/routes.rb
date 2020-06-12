@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :cotizacion_detalles
+  resources :cotizacions
+  resources :proyectos
   resources :servicios
   resources :tipo_servicios
   resources :empleados

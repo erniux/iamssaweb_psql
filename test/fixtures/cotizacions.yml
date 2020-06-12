@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_cotizacion: MyString
+  proyecto: one
+  cliente: one
+  solicitud: one
+
+two:
+  num_cotizacion: MyString
+  proyecto: two
+  cliente: two
+  solicitud: two
