@@ -2,7 +2,7 @@
 
 <h1>Proyectos</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre proyecto</th>
@@ -20,9 +20,9 @@
         <td><%= proyecto.empresa %></td>
         <td><%= proyecto.responsable %></td>
         <td><%= proyecto.comentarios %></td>
-        <td><%= link_to 'Show', proyecto %></td>
-        <td><%= link_to 'Edit', edit_proyecto_path(proyecto) %></td>
-        <td><%= link_to 'Destroy', proyecto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', proyecto %></td>
+        <td><%= link_to 'Editar', edit_proyecto_path(proyecto) %></td>
+        <td><%= link_to 'Eliminar', proyecto, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Proyecto', new_proyecto_path %>
+<%= link_to 'Crear Proyecto', new_proyecto_path %>

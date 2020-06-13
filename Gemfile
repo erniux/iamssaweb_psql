@@ -6,7 +6,7 @@ gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 gem 'turbolinks', '~> 5.x'
 gem 'jbuilder', '~> 2.0'
 group :development, :test do
@@ -32,3 +32,4 @@ gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 
 
+gem 'rails-ujs', '~> 0.1.0'

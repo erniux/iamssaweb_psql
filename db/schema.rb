@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200612002939) do
+ActiveRecord::Schema.define(version: 20200613160556) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20200612002939) do
     t.text     "observaciones"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.float    "total"
     t.index ["cotizacion_id"], name: "index_cotizacion_detalles_on_cotizacion_id", using: :btree
     t.index ["servicio_id"], name: "index_cotizacion_detalles_on_servicio_id", using: :btree
     t.index ["tipo_servicio_id"], name: "index_cotizacion_detalles_on_tipo_servicio_id", using: :btree

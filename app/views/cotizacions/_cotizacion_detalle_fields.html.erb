@@ -1,0 +1,10 @@
+<div class="nested-fields">
+  <%= f.association :servicio, label_method: :concepto, value_method: :id, include_blank: true, required: 'required', size: 10 %>
+  <%= f.text_field :num_partida, placeholder: 'Num. Partida', required: 'required' %>
+  <%= f.text_field :cantidad, label: 'Cantidad',  placeholder: 'cantidad', required: 'required' %>
+  <%= f.text_field :precio, label: 'Precio', placeholder: 'Precio', required: 'required' %>
+  <%= f.text_field :observaciones, label: 'Observaciones', placeholder: 'Observaciones' %>
+  <%= f.text_field :total, hidden: true %>
+  
+  <%= link_to_remove_association 'Eliminar', f %>
+</div> <hr>  

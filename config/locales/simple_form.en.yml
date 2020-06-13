@@ -3,13 +3,15 @@ en:
     "yes": 'Si'
     "no": 'No'
     required:
-      text: 'required'
+      #text: 'requerido'
+      html: '<small class="necessity">*</small>'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Favor de revisar los errores que se marcan:"
+      default_message: "Favor de revisar los campos requeridos"
+
     # Examples
     # labels:
     #   defaults:

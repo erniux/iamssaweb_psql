@@ -1,11 +1,16 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cotizacions</h1>
-
-<table>
+<h1>Cotizaciones</h1>
+<%= link_to 'Crear Cotizacion', new_cotizacion_path, class: 'btn btn-info' %>
+<div id="myModal" class="modal" tabindex="-1" >
+          <div class="modal-header"></div>
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+          </div>
+          </div>
+        </div>
+<table class="table">
   <thead>
     <tr>
-      <th>Num cotizacion</th>
+      <th>Núm cotizacion</th>
       <th>Proyecto</th>
       <th>Cliente</th>
       <th>Solicitud</th>
@@ -17,12 +22,12 @@
     <% @cotizacions.each do |cotizacion| %>
       <tr>
         <td><%= cotizacion.num_cotizacion %></td>
-        <td><%= cotizacion.proyecto %></td>
-        <td><%= cotizacion.cliente %></td>
-        <td><%= cotizacion.solicitud %></td>
-        <td><%= link_to 'Show', cotizacion %></td>
-        <td><%= link_to 'Edit', edit_cotizacion_path(cotizacion) %></td>
-        <td><%= link_to 'Destroy', cotizacion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= cotizacion.proyecto.nombre_proyecto %></td>
+        <td><%= cotizacion.cliente.nombre_comercial %></td>
+        <td><%= cotizacion.solicitud_id %></td>
+        <td><%= link_to 'Mostrar', cotizacion, {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'} %></td>
+        <td><%= link_to 'Editar', edit_cotizacion_path(cotizacion) %></td>
+        <td><%= link_to 'Borrar', cotizacion, method: :delete, data: { confirm: '¿Desea eliminar el registro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +35,6 @@
 
 <br>
 
-<%= link_to 'New Cotizacion', new_cotizacion_path %>
+
+
+ 

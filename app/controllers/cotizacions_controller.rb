@@ -2,14 +2,21 @@ class CotizacionsController < ApplicationController
   before_action :set_cotizacion, only: [:show, :edit, :update, :destroy]
   access all: [:index, :show, :new, :edit, :create, :update, :destroy], user: :all
 
-  # GET /cotizacions
+  
+
   def index
     @cotizacions = Cotizacion.all
   end
 
-  # GET /cotizacions/1
   def show
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
+
+  # GET /cotizacions/1
+   
 
   # GET /cotizacions/new
   def new
@@ -25,7 +32,7 @@ class CotizacionsController < ApplicationController
     @cotizacion = Cotizacion.new(cotizacion_params)
 
     if @cotizacion.save
-      redirect_to @cotizacion, notice: 'Cotizacion was successfully created.'
+      redirect_to action: "index", notice: 'Cotización se ha guardado con éxito.'
     else
       render :new
     end
@@ -34,7 +41,7 @@ class CotizacionsController < ApplicationController
   # PATCH/PUT /cotizacions/1
   def update
     if @cotizacion.update(cotizacion_params)
-      redirect_to @cotizacion, notice: 'Cotizacion was successfully updated.'
+      redirect_to  action: "index", notice: 'Cotización se ha actualizado con éxito.'
     else
       render :edit
     end
@@ -43,7 +50,7 @@ class CotizacionsController < ApplicationController
   # DELETE /cotizacions/1
   def destroy
     @cotizacion.destroy
-    redirect_to cotizacions_url, notice: 'Cotizacion was successfully destroyed.'
+    redirect_to cotizacions_url, notice: 'Cotización se ha eliminado con éxito.'
   end
 
   private
@@ -54,6 +61,7 @@ class CotizacionsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def cotizacion_params
-      params.require(:cotizacion).permit(:num_cotizacion, :proyecto_id, :cliente_id, :solicitud_id)
+      params.require(:cotizacion).permit(:num_cotizacion, :proyecto_id, :cliente_id, :solicitud_id,
+        cotizacion_detalles_attributes: [:id, :num_partida, :servicio_id, :cantidad, :precio, :observaciones, :total, :_destroy] )
     end
 end

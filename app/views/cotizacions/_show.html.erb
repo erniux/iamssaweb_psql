@@ -1,0 +1,114 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3 id="modal-title" id="MyModalLabel">Imprimir Cotización</h3>
+  </div>
+  <div class="modal-body">
+    <div id="printThis">
+   
+    <div class="row">
+      <div class="col-md-2">
+        <%= image_tag "logo_corto_iamsa.png" %>
+      </div>
+      <div class="col-md-10">
+        <div class="row"><div class="col-md-10 text-center"><strong>INGENIEROS ASESORES</strong></div></div>
+        <div class="row"><div class="col-md-10 text-center"><strong>EN METALURGIA. Y. SOLDADURA, S.A. DE. C.V.</strong></div></div>
+        <div class="row"><div class="col-md-10 text-center font-size-subtitulo"><strong>CONSULTORIA - ASESORIA - SUPERVISION</strong></div></div>
+        <div class="row"><div class="col-md-10 text-center font-size-detalle">PRIVADA DE MARITZA NO. 13 COL. SAN PABLO QUERETARO, QRO. C.P. 76130</div></div>
+        <div class="row"><div class="col-md-10 text-center font-size-detalle">TEL/FAX (442) 182-2891 AL 94 informes@iamssa.com.mx</div></div>
+        <div class="row"><div class="col-md-10 text-center">COTIZACIÓN</div></div>
+     </div>
+   </div>
+       
+    <div class="row">
+      <div class="col-md-2 text-center">Núm. Solicitud: <%= @cotizacion.solicitud.id %> </div>
+      <div class="col-md-2 text-center">Núm Cotización: <%= @cotizacion.num_cotizacion %> </div>
+      <div class="col-md-4 text-center">Proyecto: <%= @cotizacion.proyecto.nombre_proyecto %> </div>
+      <div class="col-md-2 text-center">Cliente: <%= @cotizacion.cliente.nombre_comercial.upcase %> </div>
+    </div> 
+
+    <div class="row">
+    <div class="col-md-2">Datos del cliente</div>
+  </div>
+
+       
+
+     
+     
+      <strong>Servicios:</strong>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Núm Partida</th>
+            <th>Servicio</th>
+            <th>Tipo Servicio</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Observaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cotizacion.cotizacion_detalles.each do |servicio| %>
+            <tr>
+              <td><%= servicio.num_partida %></td>
+              <td class="concepto"><%= servicio.servicio.concepto %></td>
+              <td><%= servicio.servicio.tipo_servicio %></td>
+              <td><%= servicio.cantidad %></td>
+              <td><%= number_to_currency(servicio.precio, unit: '') %></td>
+              <td><%= number_to_currency(servicio.total, unit: '') %></td>
+              <td class="observaciones"><%= servicio.observaciones %></td>
+           </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </p>
+    <% total_sin_iva = @cotizacion.cotizacion_detalles.sum(:total) %>
+    <% iva = total_sin_iva * 0.16 %>
+    <% total_con_iva = total_sin_iva + iva %>
+    <div class="row">
+      <div class="col-md-2">TOTAL SIN IVA: </div>
+      <div class="col-md-2 text-right"><%= number_to_currency(total_sin_iva, unit: '') %> </div>
+    </div>
+        
+    <div class="row">
+      <div class="col-md-2">IVA: </div>
+      <div class="col-md-2 text-right"><%= number_to_currency(iva, unit: '') %> </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">TOTAL CON IVA: </div>
+      <div class="col-md-2 text-right"><%= number_to_currency(total_con_iva, unit: '') %></div>
+    </div>  
+ 
+  </div>
+ 
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" id="Print" onclick="functionPrint()" data-dismiss="modal">
+    <span><i class="glyphicon glyphicon-print"></i></span> Imprimir
+  </button>
+   
+</div>
+
+
+<script>
+  document.getElementById("Print").onclick = function () {
+    printElement(document.getElementById("printThis"));
+};
+
+function printElement(elem) {
+    var domClone = elem.cloneNode(true);
+
+    var $printSection = document.getElementById("printSection");
+
+    if (!$printSection) {
+        var $printSection = document.createElement("div");
+        $printSection.id = "printSection";
+        document.body.appendChild($printSection);
+    }
+
+    $printSection.innerHTML = "";
+    $printSection.appendChild(domClone);
+    window.print();
+}
+
+</script>

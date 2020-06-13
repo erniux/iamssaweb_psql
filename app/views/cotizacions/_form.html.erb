@@ -1,14 +1,25 @@
 <%= simple_form_for(@cotizacion) do |f| %>
-  <%= f.error_notification %>
+<%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :num_cotizacion %>
-    <%= f.association :proyecto %>
-    <%= f.association :cliente %>
-    <%= f.association :solicitud %>
+    <%= f.input :num_cotizacion, placeholder: "Núm. Cotización", error: f.full_error(:num_cotizacion), required: 'required'  %>
+    <%= f.association :proyecto, label_method: :nombre_proyecto, value_method: :id, include_blank: true, required: 'required' %>
+    <%= f.association :cliente, label_method: :nombre_comercial, value_method: :id, include_blank: true, required: 'required' %>
+    <%= f.association :solicitud, label_method: :id, value_method: :id, include_blank: true, required: 'required' %>
   </div>
+  
+
+<h4><em><sup>*</sup>Servicios:</em></h4>
+ 
+  <%= f.simple_fields_for :cotizacion_detalles do |c| %>
+    <%= render 'cotizacion_detalle_fields', f: c %> 
+  <% end %>
+  
+<div>    
+    <%= link_to_add_association 'Agregar Servicio', f, :cotizacion_detalles %>
+</div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Guardar", class: "btn btn-primary"  %>
   </div>
 <% end %>
