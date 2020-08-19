@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200613160556) do
+ActiveRecord::Schema.define(version: 20200819152836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,23 +43,29 @@ ActiveRecord::Schema.define(version: 20200613160556) do
     t.string   "telefono_directro"
     t.string   "correo"
     t.string   "medio_contacto"
-    t.float    "precio"
     t.float    "presupuesto"
     t.float    "credito"
-    t.boolean  "revision_lunes"
-    t.boolean  "revision_martes"
-    t.boolean  "revision_miercoles"
-    t.boolean  "revision_jueves"
-    t.boolean  "revision_viernes"
-    t.boolean  "revision_sabado"
-    t.boolean  "cobro_lunes"
-    t.boolean  "cobro_martes"
-    t.boolean  "cobro_miercoles"
-    t.boolean  "cobro_jueves"
-    t.boolean  "cobro_viernes"
-    t.boolean  "cobro_sabado"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "tipo"
+    t.float    "descuento"
+    t.string   "banco"
+    t.string   "sucursal"
+    t.string   "cuenta"
+    t.string   "clabe"
+    t.string   "precio"
+    t.integer  "revision_lunes"
+    t.integer  "revision_martes"
+    t.integer  "revision_miercoles"
+    t.integer  "revision_jueves"
+    t.integer  "revision_viernes"
+    t.integer  "revision_sabado"
+    t.integer  "cobro_lunes"
+    t.integer  "cobro_martes"
+    t.integer  "cobro_miercoles"
+    t.integer  "cobro_jueves"
+    t.integer  "cobro_viernes"
+    t.integer  "cobro_sabado"
   end
 
   create_table "cotizacion_detalles", force: :cascade do |t|
